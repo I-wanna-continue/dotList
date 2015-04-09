@@ -19,6 +19,7 @@ var init = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        alert(window.location.href);
         angular.element(document).ready(function() {
             angular.bootstrap(document, ['myApp']);
         });
