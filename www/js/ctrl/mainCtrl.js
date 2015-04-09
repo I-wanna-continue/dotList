@@ -1,4 +1,4 @@
- app.controller('MyController', ['$scope', function ($scope) {
+ angular.module('myApp', []).controller('MyController', ['$scope', function ($scope) {
                 
     $scope.tasks = [];
     $scope.loading = true;
@@ -20,6 +20,11 @@
 
 
     }
+    
+    $scope.getHref = function(){
+        alert(window.location.href);
+    }
+
 
     $scope.completeTask = function($index){
         ($scope.tasks[$index]["complite"]) ? $scope.tasks[$index]["complite"] = false : $scope.tasks[$index]["complite"] = true;
