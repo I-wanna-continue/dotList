@@ -21,7 +21,7 @@ var init = {
     receivedEvent: function(id) {
         alert(window.location.href);
         angular.element(document).ready(function() {
-            angular.bootstrap(document, ['myApp']);
+            angular.bootstrap(document, ['app']);
         });
     }
 };
