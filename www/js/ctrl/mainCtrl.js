@@ -1,4 +1,4 @@
- angular.module('myApp', []).controller('MyController', ['$scope', function ($scope) {
+ app.controller('MyController', ['$scope', function ($scope) {
                 
     $scope.tasks = [];
     $scope.loading = true;
