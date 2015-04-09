@@ -12,16 +12,102 @@
     </head>
     <body>
         <div class="container">
-            <div ng-view></div>
+            <div ng-controller="MyController">
+                <br>
+                <div class="row">
+                    <div class="col-sm-1"><input type="text" class="form-control" placeholder="Enter task" style="width:70%" ng-model="task"></div>
+                    <div class="col-sm-1"><button class="btn btn-primary" style="float:right; margin-top: -10.5%;" ng-click="addTask()">Add Task</button></div>
+                </div><br>
+
+                <div ng-if=" loading == true ">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div ng-if=" loading == false ">
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                  </div>
+                </div>
+
+                <table class="table table-striped">
+                    <tr>
+                        <td><b>#</b></td>
+                        <td></td>
+                        <td><b>Task</b></td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="task in tasks">
+                        <td>{{$index+1}}</td>
+                        <td>
+                           <div ng-if=" task.complite == true ">
+                              <input type="checkbox" checked ng-click="completeTask($index)">
+                           </div>
+                           <div ng-if=" task.complite == false " ng-click="completeTask($index)">
+                              <input type="checkbox">
+                           </div>
+                        </td>
+                        <td>{{task.title}}</td>
+                        <td><button class="btn btn-danger" ng-click="deleteTask($index)">R</button></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         
         <script src="js/angular.js"></script>
-        <script src="js/angular-route.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/ctrl/mainCtrl.js"></script>
+        
+        <script>
+            angular.module('myApp', []).controller('MyController', ['$scope', function ($scope) {
+                
+                    $scope.tasks = [];
+                    $scope.loading = true;
+
+                    $scope.addTask = function (){
+                        $scope.tasks.push({id:$scope.tasks.length+1, title:$scope.task, complite:false});
+                        $scope.task = "";
+                        //saveList();
+                    };
+
+                    $scope.init = function(){
+                        /*$scope.db = new PouchDB('listapp');
+                        $scope.db.get('list').then(function(doc) {
+                            $scope.$apply(function(){
+                                $scope.tasks = doc["tasks"];
+                                $scope.loading = false;
+                            });
+                        });*/
+
+
+                    }
+
+                    $scope.completeTask = function($index){
+                        ($scope.tasks[$index]["complite"]) ? $scope.tasks[$index]["complite"] = false : $scope.tasks[$index]["complite"] = true;
+                        //saveList();
+                    }
+
+                    $scope.deleteTask = function($index){
+                        if(confirm("Are you sure you whant to delete " + $scope.tasks[$index]["title"] + "?")){
+                            $scope.tasks.splice($index, 1);
+                            //saveList();
+                        }
+                    }
+
+                    function saveList(){
+                        $scope.db.get('list').then(function(doc) {
+                          return $scope.db.put({
+                            _id: doc["_id"],
+                            _rev: doc["_rev"],
+                            tasks: $scope.tasks
+                          });
+                        });
+                    }
+                
+                
+              }]);
+        </script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            init.initialize();
+            app.initialize();
         </script>
     </body>
 </html>

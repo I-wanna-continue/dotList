@@ -1,4 +1,4 @@
-var init = {
+var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -19,9 +19,9 @@ var init = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert(window.location.href);
+        //alert(window.location.href);
         angular.element(document).ready(function() {
-            angular.bootstrap(document, ['app']);
+            angular.bootstrap(document, ['myApp']);
         });
     }
 };
