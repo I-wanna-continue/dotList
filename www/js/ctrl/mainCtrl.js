@@ -6,17 +6,17 @@
     $scope.addTask = function (){
         $scope.tasks.push({id:$scope.tasks.length+1, title:$scope.task, complite:false});
         $scope.task = "";
-        //saveList();
+        saveList();
     };
 
     $scope.init = function(){
-        /*$scope.db = new PouchDB('listapp');
+        $scope.db = new PouchDB('listapp');
         $scope.db.get('list').then(function(doc) {
             $scope.$apply(function(){
                 $scope.tasks = doc["tasks"];
                 $scope.loading = false;
             });
-        });*/
+        });
 
 
     }
@@ -28,13 +28,13 @@
 
     $scope.completeTask = function($index){
         ($scope.tasks[$index]["complite"]) ? $scope.tasks[$index]["complite"] = false : $scope.tasks[$index]["complite"] = true;
-        //saveList();
+        saveList();
     }
 
     $scope.deleteTask = function($index){
         if(confirm("Are you sure you whant to delete " + $scope.tasks[$index]["title"] + "?")){
             $scope.tasks.splice($index, 1);
-            //saveList();
+            saveList();
         }
     }
 
