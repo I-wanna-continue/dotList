@@ -4,7 +4,7 @@
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>
-          There is a fire in <b>sector 3</b>
+          <button ng-click="takeAImage()">Take a photo!</button>
         </div>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <div class="item item-divider">Health</div>
       <div class="item item-body">
         <div>
-          You ate an apple today!
+          <img id="myImage">
         </div>
       </div>
     </div>
@@ -20,7 +20,8 @@
       <div class="item item-divider">Upcoming</div>
       <div class="item item-body">
         <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
+            <input type="text" ng-model="input">
+            <input type="text" ng-model="input">
         </div>
       </div>
     </div>
