@@ -8,6 +8,7 @@
       Ionic Framework Team
     </author>
   <gap:platform name="android" />
+  <gap:plugin name="org.apache.cordova.camera" />
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
