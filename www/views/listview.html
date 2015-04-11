@@ -1,0 +1,71 @@
+<div class="meny">
+            
+            <div class="headline-">
+                <h3>Your lists</h3>
+            </div>
+
+            <div class="meny-content">
+                <div class="listBlockWrapper">
+                    <div ng-repeat="list in allLists" class="allListBlock">
+                        <div class="allListTitle"><p>{{list.title| limitTo: 20}}{{list.title.length>20 ?"...": ""}}</p></div>
+                        <div class="forward-icon"><i class="fa fa-chevron-right fa-2x"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="overlay">
+            <div class="modal">
+                <span class="close" ng-click="closeModal()"><i class="fa fa-close"></i></span>
+                <div class="head">
+                    <input type="text" ng-model="listTitle" placeholder="Add Title..."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Add Title...'" />
+                </div>
+                <hr>
+                <div class="addList">
+                    <input ng-model="itemTitle" type="text" class="add-list-title" placeholder="Task..."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Task...'" /><span ng-click="addItem()"><i class="fa fa-plus fa-2x"></i></span>
+                    <span class="add-list" ng-click="createList()"><i class="fa fa-check"></i></span>
+                </div>
+                
+                <div class="item-wrap">
+                    <div class="item" ng-repeat="item in list">
+                        <div class="checkbox">
+                          <input ng-if=" item.complete == true " id="checkbox" type="checkbox" ng-click="checkItem($index)" checked>
+                          <input ng-if=" item.complete == false " id="checkbox" type="checkbox" ng-click="checkItem($index)" >
+                          <label for="checkbox"></label>
+                        </div>
+                        
+                        <p>{{item.title | limitTo: 20}}{{item.title.length>20 ?"...": ""}}</p>
+                        <div class="delete-item" ng-click="deleteItem($index)"><i class="fa fa-close"></i></div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+     
+
+        <div class="search-bar">
+            <input type="text" class="search-input-header" placeholder="search...">    
+        </div>
+        
+        <div class="hide-on-keyboard-open">
+            <div class="ham-menu" ng-click="menuAction()">
+                <div class="hamburger" ng-style="hamburger">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+            </div>
+
+            <div id="menu-bar">
+
+                <div class="block search" ng-click="search()"><span class="one"><i class="fa fa-search fa-2x"></i></span></div>
+                <div class="block" id="add-plus" ng-click="openModal()"><span class="two"><i class="fa fa-plus fa-2x"></i></span></div>
+                <div class="block home"><span class="three"><i class="fa fa-home fa-2x "></i></span></div>
+                <div class="block "><span class="four"><i class="fa fa-cog fa-2x"></i></span></div>
+                <div class="block "><a href="#/"><span class="five"><i class="fa fa-power-off fa-2x"></i></span></a></div>
+
+
+            </div>
+        </div>

@@ -1,0 +1,47 @@
+<div id="f1_container">
+    <div id="f1_card" class="shadow" ng-style="flipcard">
+        <div class="front face">
+
+            <div class="logo">
+                <h3>.list</h3>
+            </div>
+
+            <div class="slogan"><p>"List your shit"</p></div>
+
+            <input type="text" class="login-input-form" placeholder="E-mail" ng-model="username">
+
+            <input type="password" class="login-input-form" placeholder="Password" ng-model="username">
+
+
+            <a href="#/lists"> <input type="button" class="login-btn" value="Login"> </a>
+            <input type="button" id="register" class="login-btn" value="Sign up" ng-click="flip()">
+
+        </div>
+
+        <div class="back face center">
+            <div class="logo">
+                <h4>Welcome</h4>
+            </div>
+
+            <div class="slogan"><p>Fill in this form to register!</p></div>
+
+            <div class="registerForm">
+
+                <input type="text" class="name" placeholder="First name">
+                <input type="text" class="name" placeholder="Last name">
+
+            </div>
+
+            <div class="registerForm2">
+
+                <input type="text" class="full-form" placeholder="Email..">
+                <input type="password" class="full-form" placeholder="Password">
+
+            </div>
+
+            <input type="button" id="registerBack" class="login-btn" value="Register" ng-click="flip()">
+
+
+        </div>
+    </div>
+</div>
