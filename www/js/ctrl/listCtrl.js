@@ -1,5 +1,7 @@
 app.controller('listCtrl', ['$scope', function ($scope) {
-                
+    
+    $scope.db = new PouchDB('dotlist');
+    
 	$scope.allLists = [];
 	$scope.list = [];
 
@@ -7,6 +9,19 @@ app.controller('listCtrl', ['$scope', function ($scope) {
     
     $scope.menuopen = false;
 
+    $scope.init = function(){
+        $scope.db.info().then(function (info) {
+          console.log(info);
+          if(info["doc_count"] == 0) {
+              $scope.db.put({
+                  _id: 'lists',
+                  lists: []
+              });
+          }
+        });
+        $scope.getLists();
+    }
+    
 	$scope.addItem = function(){
 
 		$scope.list.push({
@@ -40,17 +55,16 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 	$scope.createList = function(){
 
 		$scope.allLists.push({
-
 			title: $scope.listTitle,
 			items: $scope.list
-
-
 		});
+        
 		console.log($scope.allLists);
 		$scope.list = [];
 		$scope.listTitle = "";
 		$("#overlay").hide();
 		$(".modalen").hide();
+        $scope.saveLists();
 	}
 
     $scope.menuAction = function(){
@@ -65,6 +79,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
     
     $scope.search = function(){
         $(".search-bar").slideToggle("slow");
+        $scope.menuAction();
     }
     
     $scope.openModal = function(){
@@ -72,6 +87,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         .fadeIn()
         .find('.modalen')
         .fadeIn();
+        $scope.menuAction();
     }
     
     $scope.closeModal = function(){
@@ -80,6 +96,25 @@ app.controller('listCtrl', ['$scope', function ($scope) {
          .find('.modalen')
          .fadeOut();
     }
-
+    
+    $scope.getLists = function(){
+        $scope.db.get('lists').then(function (doc) {
+            console.log(doc["lists"]);
+            $scope.$apply(function(){
+                $scope.allLists = doc["lists"];
+            });
+            //$scope.allLists = doc["lists"];
+        });     
+    }
+    
+    $scope.saveLists = function(){
+        $scope.db.get('lists').then(function(doc) {
+          return $scope.db.put({
+            _id: doc["_id"],
+            _rev: doc["_rev"],
+            lists: $scope.allLists
+          });
+        });
+    }
 
 }]);
