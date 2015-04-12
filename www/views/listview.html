@@ -1,3 +1,5 @@
+
+<ion-view>
 <div class="meny">
             
             <div class="headline-">
@@ -17,7 +19,7 @@
 
 
         <div id="overlay">
-            <div class="modal">
+            <div class="modalen">
                 <span class="close" ng-click="closeModal()"><i class="fa fa-close"></i></span>
                 <div class="head">
                     <input type="text" ng-model="listTitle" placeholder="Add Title..."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Add Title...'" />
@@ -25,7 +27,6 @@
                 <hr>
                 <div class="addList">
                     <input ng-model="itemTitle" type="text" class="add-list-title" placeholder="Task..."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Task...'" /><span ng-click="addItem()"><i class="fa fa-plus fa-2x"></i></span>
-                    <span class="add-list" ng-click="createList()"><i class="fa fa-check"></i></span>
                 </div>
                 
                 <div class="item-wrap">
@@ -42,6 +43,9 @@
                     </div>
                 </div>
                 
+            </div>
+            <div class="add-list-wrap">
+                <span class="add-list" ng-click="createList()"><i class="fa fa-check fa-2x"></i></span>
             </div>
         </div>
         
@@ -69,3 +73,5 @@
 
             </div>
         </div>
+
+</ion-view>

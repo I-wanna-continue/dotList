@@ -50,7 +50,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 		$scope.list = [];
 		$scope.listTitle = "";
 		$("#overlay").hide();
-		$(".modal").hide();
+		$(".modalen").hide();
 	}
 
     $scope.menuAction = function(){
@@ -70,14 +70,14 @@ app.controller('listCtrl', ['$scope', function ($scope) {
     $scope.openModal = function(){
         $('#overlay')
         .fadeIn()
-        .find('.modal')
+        .find('.modalen')
         .fadeIn();
     }
     
     $scope.closeModal = function(){
          $('#overlay')
          .fadeOut()
-         .find('.modal')
+         .find('.modalen')
          .fadeOut();
     }
 

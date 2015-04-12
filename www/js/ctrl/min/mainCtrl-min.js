@@ -1,0 +1,1 @@
+app.controller("mainCtrl",["$scope",function(e){e.flipped=!1,e.flip=function(){e.flipped?($("#login-side").css({transform:"rotateY(0deg)"}),e.flipped=!1):($("#login-side").css({transform:"rotateY(180deg)"}),e.flipped=!0)}}]);

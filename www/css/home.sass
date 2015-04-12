@@ -1,0 +1,175 @@
+
+.login-bg
+	background: url('http://i.imgur.com/UP7fWfg.jpg') center center, no-repeat
+	background-position: cover
+
+
+
+
+
+#login-wrap
+	position: relative
+	margin: 25% auto
+	width: 90%
+	height: 400px
+	z-index: 1
+
+#login-wrap 
+	perspective: 1000
+
+
+	#login-side
+		width: 100%
+		height: 100%
+		transform-style: preserve-3d
+		transition: all 1.0s linear
+
+
+	.face 
+		position: absolute
+		width: 100%
+		background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0,0,0,0.4) 100%)
+		height: 100%
+		padding: 20px 0 30px 0 
+		backface-visibility: hidden
+		box-shadow: 0 0 5px #000
+
+
+
+		.logo
+			width: 100%
+			height: auto
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			
+
+			h3
+				font-size: 60px
+				color: #fff
+				text-transform: uppercase
+				letter-spacing: 10px
+				display: block
+				text-shadow: 0px 4px 9px rgba(150, 150, 150, 1)
+
+			h4
+				margin-top: 10px
+				font-size: 40px
+				color: #fff
+				text-transform: uppercase
+				letter-spacing: 2px
+				display: block
+				text-shadow: 0px 4px 9px rgba(150, 150, 150, 1)
+
+
+
+		.slogan
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+			margin-bottom: 20px
+
+			color: #fff
+			
+		
+		.login-input-form
+			width: 80%
+			height: 20px
+			margin: 0 auto 50px auto
+			display: block
+			background: transparent
+			border: none
+			border-bottom: 1px solid #fff
+			color: #FDFCFD
+			font-size: 20px
+			outline: none
+
+		::-webkit-input-placeholder
+			color: #FDFCFD
+			font-size: 16px
+			text-transform: uppercase
+
+
+
+		.login-btn
+			background: transparent
+			color: #fff
+			display: block
+			width: 80%
+			border-radius: 15px
+			padding: 10px
+			font-size: 20px
+			border: 1px solid #FDFCFD
+			margin: 0 auto 10px auto
+
+
+
+
+	.back 
+		display: block
+		transform: rotateY(180deg)
+		box-sizing: border-box
+		padding: 10px
+		height: 450px
+		color: white
+		text-align: center
+
+
+.backLogo
+	width: 100%
+	height: auto
+	+display(flex)
+	+align-items(center)
+	+justify-content(center)
+
+
+	h2
+		font-size: 30px
+
+
+	p 
+		font-size: 12px
+
+
+.registerForm
+	width: 80%
+	margin: 25px auto 40px
+	+display(flex)
+	+align-items(center)
+	+justify-content(space-between)
+
+	.name
+		width: 45%
+		height: 20px
+		display: block
+		background: transparent
+		border: none
+		border-bottom: 1px solid #fff
+		color: #FDFCFD
+		font-size: 20px
+		outline: none
+
+	::-webkit-input-placeholder
+		font-size: 14px !important
+
+
+.registerForm2
+	width: 80%
+	margin: 20px auto
+
+	.full-form
+		width: 100%
+		height: 20px
+		margin: 0 auto 40px auto
+		display: block
+		background: transparent
+		border: none
+		border-bottom: 1px solid #fff
+		color: #FDFCFD
+		font-size: 20px
+		outline: none
+
+	::-webkit-input-placeholder
+		font-size: 14px !important
+
+

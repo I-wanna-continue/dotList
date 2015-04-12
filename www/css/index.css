@@ -45,9 +45,228 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@font-face {
-  font-family: "Open sans";
-  src: url(../fontAwesome/Open_Sans/OpenSans-Semibold.ttf); }
+.login-bg {
+  background: url("http://i.imgur.com/UP7fWfg.jpg") center center, no-repeat;
+  background-position: cover; }
+
+#login-wrap {
+  position: relative;
+  margin: 25% auto;
+  width: 90%;
+  height: 400px;
+  z-index: 1; }
+
+#login-wrap {
+  perspective: 1000; }
+  #login-wrap #login-side {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s linear; }
+  #login-wrap .face {
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    height: 100%;
+    padding: 20px 0 30px 0;
+    backface-visibility: hidden;
+    box-shadow: 0 0 5px #000; }
+    #login-wrap .face .logo {
+      width: 100%;
+      height: auto;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center; }
+      #login-wrap .face .logo h3 {
+        font-size: 60px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        display: block;
+        text-shadow: 0px 4px 9px #969696; }
+      #login-wrap .face .logo h4 {
+        margin-top: 10px;
+        font-size: 40px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: block;
+        text-shadow: 0px 4px 9px #969696; }
+    #login-wrap .face .slogan {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      margin-bottom: 20px;
+      color: #fff; }
+    #login-wrap .face .login-input-form {
+      width: 80%;
+      height: 20px;
+      margin: 0 auto 50px auto;
+      display: block;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #FDFCFD;
+      font-size: 20px;
+      outline: none; }
+    #login-wrap .face ::-webkit-input-placeholder {
+      color: #FDFCFD;
+      font-size: 16px;
+      text-transform: uppercase; }
+    #login-wrap .face .login-btn {
+      background: transparent;
+      color: #fff;
+      display: block;
+      width: 80%;
+      border-radius: 15px;
+      padding: 10px;
+      font-size: 20px;
+      border: 1px solid #FDFCFD;
+      margin: 0 auto 10px auto; }
+  #login-wrap .back {
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    padding: 10px;
+    height: 450px;
+    color: white;
+    text-align: center; }
+
+.backLogo {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .backLogo h2 {
+    font-size: 30px; }
+  .backLogo p {
+    font-size: 12px; }
+
+.registerForm {
+  width: 80%;
+  margin: 25px auto 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+  .registerForm .name {
+    width: 45%;
+    height: 20px;
+    display: block;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #FDFCFD;
+    font-size: 20px;
+    outline: none; }
+  .registerForm ::-webkit-input-placeholder {
+    font-size: 14px !important; }
+
+.registerForm2 {
+  width: 80%;
+  margin: 20px auto; }
+  .registerForm2 .full-form {
+    width: 100%;
+    height: 20px;
+    margin: 0 auto 40px auto;
+    display: block;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #FDFCFD;
+    font-size: 20px;
+    outline: none; }
+  .registerForm2 ::-webkit-input-placeholder {
+    font-size: 14px !important; }
+
 .meny {
   width: 100%;
   height: 70%;
@@ -369,96 +588,40 @@ table {
   left: 0;
   z-index: 10;
   display: none; }
-  #overlay .modal {
+  #overlay .modalen {
     width: 90%;
-    height: 370px;
+    max-height: 370px;
     background: #fff;
     box-shadow: 0 0 10px #000;
-    overflow: hidden;
+    overflow: scroll;
     position: relative;
-    margin: 40% auto 0;
+    margin: 30% auto 0;
     z-index: 11;
     display: none;
     padding: 10px;
-    overflow: auto; }
-    #overlay .modal hr {
+    clearfix: hidden; }
+    #overlay .modalen hr {
       width: 100%;
       margin: 0 auto;
       border: none;
       border-bottom: 1px solid #E2E2E2; }
-    #overlay .modal .head {
+    #overlay .modalen .head {
       padding: 10px; }
-      #overlay .modal .head input {
+      #overlay .modalen .head input {
         border: none;
         height: 40px;
         font-size: 20px;
         color: #333;
         border-bottom: 1px solid #ccc;
         outline: none; }
-      #overlay .modal .head ::-webkit-input-placeholder {
+      #overlay .modalen .head ::-webkit-input-placeholder {
         color: #333;
         font-size: 20px; }
-    #overlay .modal .addList {
-      padding: 10px;
-      display: -webkit-box;
-      display: -moz-box;
-      display: box;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      box-pack: center;
-      -webkit-justify-content: center;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      -o-justify-content: center;
-      justify-content: center;
-      -ms-flex-pack: center; }
-      #overlay .modal .addList input {
-        border: none;
-        width: 40%;
-        height: 40px;
-        font-size: 16px;
-        color: #333;
-        border-bottom: 1px solid #ccc;
-        outline: none; }
-      #overlay .modal .addList ::-webkit-input-placeholder {
-        color: #333;
-        font-size: 16px; }
-      #overlay .modal .addList span {
-        height: 30px;
-        width: 30px;
-        display: -webkit-box;
-        display: -moz-box;
-        display: box;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -moz-box-pack: center;
-        box-pack: center;
-        -webkit-justify-content: center;
-        -moz-justify-content: center;
-        -ms-justify-content: center;
-        -o-justify-content: center;
-        justify-content: center;
-        -ms-flex-pack: center;
-        -webkit-box-align: center;
-        -moz-box-align: center;
-        box-align: center;
-        -webkit-align-items: center;
-        -moz-align-items: center;
-        -ms-align-items: center;
-        -o-align-items: center;
-        align-items: center;
-        -ms-flex-align: center; }
-    #overlay .modal .item-wrap {
+    #overlay .modalen .item-wrap {
       width: 100%;
-      min-height: 400px; }
-      #overlay .modal .item-wrap .item {
+      background: pink;
+      overflow: scroll; }
+      #overlay .modalen .item-wrap .item {
         width: 85%;
         margin: 10px auto;
         height: 40px;
@@ -482,13 +645,13 @@ table {
         background: linear-gradient(to bottom, rgba(152, 152, 152, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
         padding: 5px;
         box-shadow: 0 0 3px #000; }
-        #overlay .modal .item-wrap .item input[type=checkbox] {
+        #overlay .modalen .item-wrap .item input[type=checkbox] {
           visibility: hidden; }
-        #overlay .modal .item-wrap .item .checkbox {
+        #overlay .modalen .item-wrap .item .checkbox {
           width: 10%;
           z-index: 99;
           position: relative; }
-        #overlay .modal .item-wrap .item .checkbox label {
+        #overlay .modalen .item-wrap .item .checkbox label {
           cursor: pointer;
           position: absolute;
           height: 40px;
@@ -501,7 +664,7 @@ table {
           box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4);
           background: rgba(50, 50, 50, 0.1);
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 ); }
-        #overlay .modal .item-wrap .item .checkbox label:after {
+        #overlay .modalen .item-wrap .item .checkbox label:after {
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
           filter: alpha(opacity=0);
           opacity: 0;
@@ -520,15 +683,15 @@ table {
           -o-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
           transform: rotate(-45deg); }
-        #overlay .modal .item-wrap .item .checkbox label:hover::after {
+        #overlay .modalen .item-wrap .item .checkbox label:hover::after {
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
           filter: alpha(opacity=30);
           opacity: 0.3; }
-        #overlay .modal .item-wrap .item .checkbox input[type=checkbox]:checked + label:after {
+        #overlay .modalen .item-wrap .item .checkbox input[type=checkbox]:checked + label:after {
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
           filter: alpha(opacity=100);
           opacity: 1; }
-      #overlay .modal .item-wrap p {
+      #overlay .modalen .item-wrap p {
         max-width: 80%;
         line-height: 1.5;
         font-size: 12px;
@@ -558,7 +721,7 @@ table {
         -o-align-items: center;
         align-items: center;
         -ms-flex-align: center; }
-      #overlay .modal .item-wrap .delete-item {
+      #overlay .modalen .item-wrap .delete-item {
         width: 10%;
         margin-left: 5px;
         display: -webkit-box;
@@ -586,14 +749,14 @@ table {
         -o-align-items: center;
         align-items: center;
         -ms-flex-align: center; }
-    #overlay .modal .close {
+    #overlay .modalen .close {
       position: absolute;
       right: 5px;
       top: 5px;
       font-size: 16px;
       padding: 5px 10px;
       cursor: pointer; }
-    #overlay .modal .add-list {
+    #overlay .modalen .add-list {
       position: absolute;
       right: 10px;
       height: 40px;
@@ -630,91 +793,41 @@ table {
       -o-align-items: center;
       align-items: center;
       -ms-flex-align: center; }
-
-.itemBox {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  padding: 10px 30px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 4px;
-  border: 1px solid #666;
-  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.5);
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  -o-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center; }
-  .itemBox input {
-    height: 30px; }
-  .itemBox p {
-    text-transform: uppercase;
-    font-size: 16px;
-    color: #1f1f1f;
-    margin-left: 20px; }
-
-@font-face {
-  font-family: "Open sans";
-  src: url(../fontAwesome/Open_Sans/OpenSans-Semibold.ttf); }
-body {
-  background: #fff;
-  overflow-x: none;
-  font-family: "Open sans";
-  font-size: 12px;
-  color: #1f1f1f; }
-  body a {
-    text-decoration: none; }
-  body p {
-    padding: 10px; }
-
-.login-bg {
-  background: url("http://i.imgur.com/UP7fWfg.jpg") center center, no-repeat;
-  background-position: cover; }
-
-#f1_container {
-  position: relative;
-  margin: 25% auto;
-  width: 90%;
-  height: 400px;
-  z-index: 1; }
-
-#f1_container {
-  perspective: 1000; }
-  #f1_container #f1_card {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1s linear; }
-  #f1_container .face {
-    position: absolute;
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
-    height: 100%;
-    padding: 20px 0 30px 0;
-    backface-visibility: hidden; }
-    #f1_container .face .logo {
-      width: 100%;
-      height: auto;
+  #overlay .add-list-wrap {
+    height: 60px;
+    width: 90%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center; }
+    #overlay .add-list-wrap span {
+      height: 50px;
+      width: 50px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 50%;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -722,56 +835,6 @@ body {
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      box-align: center;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -ms-flex-align: center;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      box-pack: center;
-      -webkit-justify-content: center;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      -o-justify-content: center;
-      justify-content: center;
-      -ms-flex-pack: center; }
-      #f1_container .face .logo h3 {
-        font-size: 60px;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 10px;
-        display: block;
-        text-shadow: 0px 4px 9px #969696; }
-      #f1_container .face .logo h4 {
-        margin-top: 10px;
-        font-size: 40px;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        display: block;
-        text-shadow: 0px 4px 9px #969696; }
-    #f1_container .face .slogan {
-      display: -webkit-box;
-      display: -moz-box;
-      display: box;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      box-align: center;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -ms-flex-align: center;
       -webkit-box-pack: center;
       -moz-box-pack: center;
       box-pack: center;
@@ -781,199 +844,28 @@ body {
       -o-justify-content: center;
       justify-content: center;
       -ms-flex-pack: center;
-      margin-bottom: 20px;
-      color: #fff; }
-    #f1_container .face .login-input-form {
-      width: 80%;
-      height: 20px;
-      margin: 0 auto 50px auto;
-      display: block;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #fff;
-      color: #FDFCFD;
-      font-size: 20px;
-      outline: none; }
-    #f1_container .face ::-webkit-input-placeholder {
-      color: #FDFCFD;
-      font-size: 16px;
-      text-transform: uppercase; }
-    #f1_container .face .login-btn {
-      background: transparent;
-      color: #fff;
-      display: block;
-      width: 80%;
-      border-radius: 15px;
-      padding: 10px;
-      font-size: 20px;
-      border: 1px solid #FDFCFD;
-      margin: 0 auto 10px auto; }
-  #f1_container .back {
-    display: block;
-    transform: rotateY(180deg);
-    box-sizing: border-box;
-    padding: 10px;
-    height: 450px;
-    color: white;
-    text-align: center; }
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center; }
 
-.backLogo {
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .backLogo h2 {
-    font-size: 30px; }
-  .backLogo p {
-    font-size: 12px; }
+body {
+  overflow-x: none;
+  font-family: "Open sans";
+  font-size: 12px;
+  color: #1f1f1f; }
+  body a {
+    text-decoration: none; }
+  body p {
+    padding: 10px; }
+  body h3 {
+    color: #fff !important; }
 
-.registerForm {
-  width: 80%;
-  margin: 50px auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  box-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-  -ms-flex-align: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .registerForm .name {
-    width: 45%;
-    margin-right: 2.5%;
-    height: 20px;
-    margin: 0 auto;
-    display: block;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    color: #FDFCFD;
-    font-size: 20px;
-    outline: none; }
-  .registerForm ::-webkit-input-placeholder {
-    font-size: 14px !important; }
-
-.registerForm2 {
-  width: 80%;
-  margin: 20px auto;
-  /*.login-wrap
-   * width: 90%
-   * margin: 25% auto
-   * background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0,0,0,0.4) 100%)
-   * padding: 20px 0 30px 0 
-   * box-shadow: 0 0 10px #000
-   * perspective: 1000
-   * position: relative
-   *
-   *
-   * .logo
-   * 	width: 100%
-   * 	height: auto
-   * 	+display(flex)
-   * 	+align-items(center)
-   * 	+justify-content(center)
-   *
-   *
-   * 	h3
-   * 		font-family: 'Open sans'
-   * 		font-size: 60px
-   * 		color: #fff
-   * 		text-transform: uppercase
-   * 		letter-spacing: 10px
-   * 		display: block
-   * 		text-shadow: 0px 4px 9px rgba(150, 150, 150, 1)
-   *
-   *
-   *
-   * .slogan
-   * 	+display(flex)
-   * 	+align-items(center)
-   * 	+justify-content(center)
-   * 	margin-bottom: 30px
-   *
-   * 	color: #fff
-   *
-   *
-   * .login-input-form
-   * 	width: 80%
-   * 	height: 50px
-   * 	margin: 0 auto 20px auto
-   * 	display: block
-   * 	background: transparent
-   * 	border: none
-   * 	border-bottom: 1px solid #fff
-   * 	color: #FDFCFD
-   * 	font-size: 20px
-   * 	outline: none
-   *
-   * ::-webkit-input-placeholder
-   * 	color: #FDFCFD
-   * 	font-size: 16px
-   * 	font-weight: bold
-   * 	text-transform: uppercase
-   *
-   *
-   *
-   * .login-btn
-   * 	background: transparent
-   * 	color: #fff
-   * 	display: block
-   * 	width: 80%
-   * 	border-radius: 15px
-   * 	padding: 10px
-   * 	font-size: 20px
-   * 	border: 1px solid #FDFCFD
-   * 	margin: 0 auto 10px auto */ }
-  .registerForm2 .full-form {
-    width: 100%;
-    height: 20px;
-    margin: 0 auto 50px auto;
-    display: block;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    color: #FDFCFD;
-    font-size: 20px;
-    outline: none; }
-  .registerForm2 ::-webkit-input-placeholder {
-    font-size: 14px !important; }
+ion-view {
+  background: url("../img/bg.jpg") center center, no-repeat;
+  background-position: cover; }
