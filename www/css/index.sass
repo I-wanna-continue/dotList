@@ -25,4 +25,107 @@ ion-view
 	background: url('../img/bg.jpg') center center, no-repeat
 	background-position: cover
 
+
+
+.search-bar
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 80px
+	background: #333
+	display: none
+	z-index: 999
+
+	.search-input-header
+		border: none
+		font-family: 'Open sans'
+		border-bottom: 1px solid #ccc
+		margin: 5px 0 0 20px
+		height: 65%
+		width: 90%
+		background: rgba(0,0,0,0)
+		padding-left: 20px
+		color: #ccc
+		font-size: 16px
+		font-weight: bold
+		text-transform: uppercase
+
+	input:focus
+		outline: none
+
+	::-webkit-input-placeholder
+		color: #ccc
+		font-size: 16px
+		font-weight: bold
+		text-transform: uppercase
+
+
+//Menu hamburger
+
+.ham-menu
+	position: fixed
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 80px
+	color: #ddd
+	display: flex 
+	flex-direction: row
+	+display(flex)
+	+align-items(center)
+	+justify-content(center)
+
+
+	.hamburger
+		position: relative
+		+size(50px)
+		background: lightcoral
+		border-radius: 50%
+		border: 1px solid #fff
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		+transition(all 800ms)
+
+
+
+//Menu bar
+
+#menu-bar
+	position: fixed
+	bottom: -80px
+	left: 0
+	width: 100%
+	height: 80px
+	display: flex 
+	flex-direction: row
+	+transition(all 1000ms)
+	z-index: 999
+
+	.block
+		width: 100%
+		height: 100%
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		cursor: pointer
+
+		span 
+			+size(50px)
+			border-radius: 50%
+			border: 1px solid #ddd
+			color: #ddd
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+
+
+		
+
+
+
+
+
+
 	
