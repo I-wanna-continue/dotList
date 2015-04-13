@@ -56,7 +56,8 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 
 		$scope.allLists.push({
 			title: $scope.listTitle,
-			items: $scope.list
+			items: $scope.list,
+      id: $scope.allLists.length+1
 		});
         
 		console.log($scope.allLists);

@@ -1,0 +1,1 @@
+app.controller("activeListCtrl",function(o,i){console.log(i),o.id=i.id});

@@ -36,17 +36,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/resources\/android\/icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 24007,
-		"inputAbbreviatedPath": "\/resources\/android\/icon.png",
-		"outputAbbreviatedPath": "\/resources\/android\/icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/resources\/android\/icon\/drawable-hdpi-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -87,6 +76,17 @@
 		"initialSize": 5432,
 		"inputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xhdpi-icon.png",
 		"outputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xhdpi-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/resources\/android\/icon\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 330194,
+		"inputAbbreviatedPath": "\/resources\/android\/icon\/icon.png",
+		"outputAbbreviatedPath": "\/resources\/android\/icon\/icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -719,7 +719,7 @@
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 2,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/www\/css\/fonts\/fonts.sass",
 		"outputAbbreviatedPath": "\/www\/css\/css\/fonts.css",
@@ -888,6 +888,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/www\/js\/ctrl\/activeListCtrl.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/js\/ctrl\/activeListCtrl.js",
+		"outputAbbreviatedPath": "\/www\/js\/ctrl\/min\/activeListCtrl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/www\/js\/ctrl\/listCtrl.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -905,6 +916,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/www\/js\/ctrl\/mainCtrl.js",
 		"outputAbbreviatedPath": "\/www\/js\/ctrl\/min\/mainCtrl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/www\/js\/ctrl\/min\/activeListCtrl-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/js\/ctrl\/min\/activeListCtrl-min.js",
+		"outputAbbreviatedPath": "\/www\/js\/ctrl\/min\/min\/activeListCtrl-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -938,6 +960,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/www\/js\/main.js",
 		"outputAbbreviatedPath": "\/www\/js\/min\/main-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/www\/js\/min\/app-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/js\/min\/app-min.js",
+		"outputAbbreviatedPath": "\/www\/js\/min\/min\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3054,6 +3087,24 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/www\/views\/activeList.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/views\/activeList.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/www\/views\/activeListView.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/views\/activeListView.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/www\/views\/home.html": {
 		"fileType": 8192,

@@ -28,6 +28,11 @@ var app = angular.module('starter', ['ionic'])
     url: '/lists',
     templateUrl: 'views/listview.html',
     controller: 'listCtrl'
+  })
+  .state('activeList', {
+    url: '/activelist/:id',
+    templateUrl: 'views/activeList.html',
+    controller: 'activeListCtrl'
   });
     
   $urlRouterProvider.otherwise('/');
