@@ -1,5 +1,75 @@
 
 
+
 <ion-view>
-	<h1>{{ id }}</h1>
+<div class="content-block">
+            
+	<div class="headline-1">
+	    <span class="itemCount">5</span>
+	    <h3>Title</h3>
+	</div>
+
+	<div class="add-item-container">
+		<input type="text" placeholder="add item ...">
+		<span><i class="fa fa-plus fa-2x"></i></span>
+	</div>
+
+	<div class="items-list-container">
+		
+		<div class="items-list-block">
+			<span><i class="fa fa-check-square-o fa-3x" style="color: green"></i></span>
+			<p>Lorem.</p>
+			<span class="close-icon"><i class="fa fa-close fa-2x"></i></span>
+		</div>
+		<div class="items-list-block">
+			<span><i class="fa fa-square-o fa-3x"></i></span>
+			<p>Lorem.</p>
+			<span class="close-icon"><i class="fa fa-close fa-2x"></i></span>
+		</div>
+		<div class="items-list-block">
+			<span><i class="fa fa-square-o fa-3x"></i></span>
+			<p>Lorem.</p>
+			<span class="close-icon"><i class="fa fa-close fa-2x"></i></span>
+		</div>
+		<div class="items-list-block">
+			<span><i class="fa fa-check-square-o fa-3x"></i></span>
+			<p>Lorem.</p>
+			<span class="close-icon"><i class="fa fa-close fa-2x"></i></span>
+		</div>
+		<div class="items-list-block">
+			<span><i class="fa fa-check-square-o fa-3x"></i></span>
+			<p>Lorem.</p>
+			<span class="close-icon"><i class="fa fa-close fa-2x"></i></span>
+		</div>
+
+	</div>
+
+</div>
+        
+     
+
+        <div class="search-bar">
+            <input type="text" class="search-input-header" placeholder="search...">    
+        </div>
+        
+        <div class="hide-on-keyboard-open">
+            <div class="ham-menu" ng-click="menuAction()">
+                <div class="hamburger" ng-style="hamburger">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+            </div>
+
+            <div id="menu-bar">
+
+                <div class="block search" ng-click="search()"><span class="one"><i class="fa fa-search fa-2x"></i></span></div>
+                <div class="block" id="add-plus" ng-click="openModal()"><span class="two"><i class="fa fa-plus fa-2x"></i></span></div>
+                <div class="block home"><span class="three"><i class="fa fa-home fa-2x "></i></span></div>
+                <div class="block "><span class="four"><i class="fa fa-cog fa-2x"></i></span></div>
+                <div class="block "><a href="#/"><span class="five"><i class="fa fa-power-off fa-2x"></i></span></a></div>
+
+
+            </div>
+        </div>
+    
+<div ng-init="init()"></div>
 </ion-view>

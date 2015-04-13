@@ -36,6 +36,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/resources\/android\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 330194,
+		"inputAbbreviatedPath": "\/resources\/android\/icon.png",
+		"outputAbbreviatedPath": "\/resources\/android\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/resources\/android\/icon\/drawable-hdpi-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -80,13 +91,24 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/resources\/android\/icon\/icon.png": {
+	"\/resources\/android\/icon\/drawable-xxhdpi-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 330194,
-		"inputAbbreviatedPath": "\/resources\/android\/icon\/icon.png",
-		"outputAbbreviatedPath": "\/resources\/android\/icon\/icon.png",
+		"initialSize": 22410,
+		"inputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xxhdpi-icon.png",
+		"outputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xxhdpi-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/resources\/android\/icon\/drawable-xxxhdpi-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38011,
+		"inputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xxxhdpi-icon.png",
+		"outputAbbreviatedPath": "\/resources\/android\/icon\/drawable-xxxhdpi-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -227,6 +249,22 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/www\/css\/activeList.sass": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 2,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/css\/activeList.sass",
+		"outputAbbreviatedPath": "\/www\/css\/activeList.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": false
 		},
 	"\/www\/css\/fontAwesome\/css\/font-awesome.css": {
 		"fileType": 16,
