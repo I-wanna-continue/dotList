@@ -412,7 +412,7 @@ table {
   left: 0;
   width: 100%;
   height: 80px;
-  background: #1f1f1f;
+  background: #333;
   display: none;
   z-index: 999; }
   .search-bar .search-input-header {
@@ -590,16 +590,15 @@ table {
   display: none; }
   #overlay .modalen {
     width: 90%;
-    max-height: 370px;
+    height: 400px;
     background: #fff;
     box-shadow: 0 0 10px #000;
-    overflow: scroll;
-    position: relative;
-    margin: 30% auto 0;
+    position: absolute;
+    left: 5%;
+    top: 10%;
     z-index: 11;
     display: none;
-    padding: 10px;
-    clearfix: hidden; }
+    padding: 10px; }
     #overlay .modalen hr {
       width: 100%;
       margin: 0 auto;
@@ -612,14 +611,67 @@ table {
         height: 40px;
         font-size: 20px;
         color: #333;
-        border-bottom: 1px solid #ccc;
         outline: none; }
       #overlay .modalen .head ::-webkit-input-placeholder {
         color: #333;
         font-size: 20px; }
+    #overlay .modalen .addList {
+      width: 35%;
+      margin: 10px auto 10px auto;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      box-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -o-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: justify; }
+      #overlay .modalen .addList .add-list-title {
+        width: 70%;
+        border-bottom: 1px solid #ddd; }
+      #overlay .modalen .addList ::-webkit-input-placeholder {
+        color: #333;
+        font-size: 16px; }
+      #overlay .modalen .addList span {
+        width: 20%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        box-pack: start;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
+        -ms-justify-content: flex-start;
+        -o-justify-content: flex-start;
+        justify-content: flex-start;
+        -ms-flex-pack: start;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        box-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        -ms-flex-align: center; }
     #overlay .modalen .item-wrap {
+      position: relative;
       width: 100%;
-      background: pink;
+      max-height: 220px;
       overflow: scroll; }
       #overlay .modalen .item-wrap .item {
         width: 85%;
@@ -654,8 +706,8 @@ table {
         #overlay .modalen .item-wrap .item .checkbox label {
           cursor: pointer;
           position: absolute;
-          height: 40px;
-          width: 40px;
+          height: 30px;
+          width: 30px;
           top: 0;
           left: 0;
           border-radius: 4px;
@@ -756,47 +808,11 @@ table {
       font-size: 16px;
       padding: 5px 10px;
       cursor: pointer; }
-    #overlay .modalen .add-list {
-      position: absolute;
-      right: 10px;
-      height: 40px;
-      width: 40px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid #1f1f1f;
-      border-radius: 50%;
-      cursor: pointer;
-      display: -webkit-box;
-      display: -moz-box;
-      display: box;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      box-pack: center;
-      -webkit-justify-content: center;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      -o-justify-content: center;
-      justify-content: center;
-      -ms-flex-pack: center;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      box-align: center;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -ms-flex-align: center; }
   #overlay .add-list-wrap {
     height: 60px;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -822,12 +838,16 @@ table {
     -o-align-items: center;
     align-items: center;
     -ms-flex-align: center; }
-    #overlay .add-list-wrap span {
+    #overlay .add-list-wrap .add-list {
       height: 50px;
       width: 50px;
-      color: #fff;
-      border: 1px solid #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #1f1f1f;
       border-radius: 50%;
+      cursor: pointer;
       display: -webkit-box;
       display: -moz-box;
       display: box;
