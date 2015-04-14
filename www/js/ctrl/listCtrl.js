@@ -6,8 +6,10 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 	$scope.list = [];
 
 	$scope.listTitle = "";
+
     
-    $scope.menuopen = false;
+  $scope.menuHandler = "menu-bar";
+  $scope.hamburgerHandler = "hamburger";
 
     $scope.init = function(){
         $scope.db.info().then(function (info) {
@@ -68,13 +70,19 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         $scope.saveLists();
 	}
 
-    $scope.menuAction = function(){
-        if($("#menu-bar").css("bottom") == "-80px" ){
-            $("#menu-bar").css("bottom", "0");
-            $(".hamburger").css("margin-top", "-160px");
+    
+
+
+   $scope.menuAction = function(){
+        if($scope.menuHandler == "menu-bar"){
+           // $("#menu-bar").css("bottom", "0");
+           $scope.menuHandler = "menu-bar-open";
+             $scope.hamburgerHandler = "hamburger-open";
+            console.log("SuckaDick");
         }else{
-            $("#menu-bar").css("bottom", "-80px");
-            $(".hamburger").css("margin-top", "0px"); 
+           $scope.menuHandler= "menu-bar";
+             $scope.hamburgerHandler = "hamburger"; 
+            console.log("SuckNoDick");
         }
     }
     

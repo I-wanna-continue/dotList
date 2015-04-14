@@ -1,3 +1,12 @@
+
+
+.spinner
+	+size(40px)
+	font-size: 40px
+	position: relative
+	margin: 5px auto
+	color: #fff
+	z-index: 999
 		
 //Content block
 
@@ -17,7 +26,9 @@
 		color: #fff
 		margin-bottom: 20px
 		text-transform: uppercase
-		font-size: 14px
+		font:
+			weight: bold
+			size: 18px
 		letter-spacing: 3
 		+display(flex)
 		+align-items(center)
@@ -36,15 +47,14 @@
 			
 			//created lists
 			.allListBlock
-				width: 85%
-				margin: 10px auto
-				height: 40px 
-				color: #333
+				width: 90%
+				height: 40px
+				margin: 0 auto 2px
+				background: #fff
+				box-shadow: 0 0 3px #000
 				+display(flex)
 				+flex-wrap(wrap)
-				+align-items(center)
-				background: rgba(255,255,255,0.8)
-				box-shadow: 0 0 10px #000
+				+justify-content(flex-start)
 
 				.allListTitle 
 					width: 80%
@@ -57,6 +67,8 @@
 						margin-left: 20px
 						font-size: 14px
 						letter-spacing: 1px
+						color: #333
+			
 
 				.forward-icon
 					height: 100%
@@ -64,7 +76,9 @@
 					+display(flex)
 					+justify-content(center)
 					+align-items(center)
-
+				
+					a 
+						color: #1f1f1f
 
 
 

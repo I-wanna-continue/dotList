@@ -16,6 +16,7 @@ body
 
 	a
 		text-decoration: none
+		list-style: none
 
 	p
 		padding: 10px
@@ -23,11 +24,18 @@ body
 	h3 
 		color: #fff !important
 
+
+
 ion-view
 	background: url('../img/bg.jpg') center center, no-repeat
 	background-position: cover
 
-
+#bg
+	+size(100%)
+	background: lightcoral
+	position: absolute
+	top: 0
+	left: 0
 
 .search-bar
 	position: fixed
@@ -81,6 +89,19 @@ ion-view
 
 	.hamburger
 		position: relative
+		margin-top: 0
+		+size(50px)
+		background: lightcoral
+		border-radius: 50%
+		border: 1px solid #fff
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		+transition(all 800ms)
+
+	.hamburger-open
+		position: relative
+		margin-top: -160px
 		+size(50px)
 		background: lightcoral
 		border-radius: 50%
@@ -92,11 +113,44 @@ ion-view
 
 
 
+
+
 //Menu bar
 
-#menu-bar
+.menu-bar
 	position: fixed
 	bottom: -80px
+	left: 0
+	width: 100%
+	height: 80px
+	display: flex 
+	flex-direction: row
+	+transition(all 1000ms)
+	z-index: 999
+
+
+	.block
+		width: 100%
+		height: 100%
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		cursor: pointer
+
+		span 
+			+size(50px)
+			border-radius: 50%
+			border: 1px solid #ddd
+			color: #ddd
+			+display(flex)
+			+align-items(center)
+			+justify-content(center)
+
+
+
+.menu-bar-open
+	position: fixed
+	bottom: 0
 	left: 0
 	width: 100%
 	height: 80px
