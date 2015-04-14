@@ -10,7 +10,7 @@
 
             <div class="lists-content">
                 <div class="listBlockWrapper">
-                    <div ng-repeat="list in allLists" class="allListBlock">
+                    <div ng-repeat="list in allLists | filter: { title: serchword }" class="allListBlock">
                         <div class="allListTitle"><p>{{list.title| limitTo: 20}}{{list.title.length>20 ?"...": ""}}</p></div>
                         <div class="forward-icon"><a href="#/activelist/{{ list.id }}"><i class="fa fa-chevron-right fa-2x"></i></a></div>
                     </div>
@@ -48,7 +48,7 @@
      
 
         <div class="search-bar">
-            <input type="text" class="search-input-header" placeholder="search...">    
+            <input type="text" class="search-input-header" placeholder="search..." ng-model="serchword">    
         </div>
         
         <div class="hide-on-keyboard-open">

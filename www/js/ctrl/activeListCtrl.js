@@ -1,44 +1,24 @@
 app.controller('activeListCtrl', function ($scope, $stateParams) {
     
-    $scope.id = $stateParams.id;
+    $scope.db = new PouchDB('dotlist');
+    $scope.title = "";
+    $scope.serchword = "";
 
     $scope.menuHandler = "menu-bar";
     $scope.hamburgerHandler = "hamburger";
     $scope.currentTask = 0;
-    $scope.selectedList = [{
-    	title: "Title",
-    	checked: false
-    },{
-    	title: "Title2",
-    	checked: false
-    },{
-    	title: "Title3",
-    	checked: false
-    },{
-    	title: "Title4",
-    	checked: false
-    },{
-    	title: "Title5",
-    	checked: true
-    },{
-    	title: "Title6",
-    	checked: false
-    }];
-
-    $scope.completeTask = function($index){
-    	($scope.selectedList[$index]["checked"]) ? $scope.selectedList[$index]["checked"] = false : $scope.selectedList[$index]["checked"] = true;
-       	console.log($index);
-       	($scope.selectedList[$index]["checked"]) ? $scope.currentTask-- : $scope.currentTask++;
-       	
-    }
+    $scope.selectedList = [];
 
     $scope.init = function(){
-    	for(var i = 0; i < $scope.selectedList.length; i++){
-    		if($scope.selectedList[i].checked == false) $scope.currentTask++;
-
-    	}
+        $scope.getItems();
     }
 
+    $scope.completeTask = function($index){
+    	($scope.selectedList[$index]["complete"]) ? $scope.selectedList[$index]["complete"] = false : $scope.selectedList[$index]["complete"] = true;
+       	console.log($index);
+       	($scope.selectedList[$index]["complete"]) ? $scope.currentTask-- : $scope.currentTask++;
+       	$scope.saveItems();
+    }
 
     	//Delete items in a List
 	$scope.deleteItem = function($index){
@@ -47,7 +27,7 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
             $scope.selectedList.splice($index, 1);
             $scope.currentTask--;
         }
-
+        $scope.saveItems();
 	}
 
 	$scope.addItem = function(){
@@ -61,6 +41,7 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
 
 		$scope.itemTitle = "";
 		$scope.currentTask++
+        $scope.saveItems();
 	}
    
     $scope.menuAction = function(){
@@ -92,6 +73,40 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
          .fadeOut()
          .find('.modalen')
          .fadeOut();
+    }
+    
+    $scope.getItems = function(){
+        $scope.db.get('lists').then(function (doc) {
+            console.log(doc["lists"]);
+            for(var i = 0; i < doc["lists"].length; i++){
+                if(doc["lists"][i]["id"] == $stateParams.id){
+                    $scope.$apply(function(){
+                        $scope.title = doc["lists"][i]["title"];
+                        $scope.selectedList = doc["lists"][i]["items"];
+                    });
+                }
+            }
+            for(var i = 0; i < $scope.selectedList.length; i++){
+                if($scope.selectedList[i].complete == false) $scope.currentTask++;
+
+            }
+        });     
+    }
+    
+    $scope.saveItems = function(){
+        $scope.db.get('lists').then(function(doc) {
+          //var lists = doc["lists"];
+          for(var i = 0; i < doc["lists"].length; i++){
+                if(doc["lists"][i]["id"] == $stateParams.id){
+                    doc["lists"][i]["items"] = $scope.selectedList;
+                }
+          }
+          return $scope.db.put({
+            _id: doc["_id"],
+            _rev: doc["_rev"],
+            lists: doc["lists"]
+          });
+        });
     }
 
 });
