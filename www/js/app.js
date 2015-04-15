@@ -33,6 +33,11 @@ var app = angular.module('starter', ['ionic', 'ngAnimate'])
     url: '/activelist/:id',
     templateUrl: 'views/activeList.html',
     controller: 'activeListCtrl'
+  })
+  .state('profile', {
+    url: '/profile',
+    templateUrl: 'views/profile.html',
+    controller: 'profileCtrl'
   });
     
   $urlRouterProvider.otherwise('/');

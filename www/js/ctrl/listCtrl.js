@@ -78,11 +78,9 @@ app.controller('listCtrl', ['$scope', function ($scope) {
            // $("#menu-bar").css("bottom", "0");
            $scope.menuHandler = "menu-bar-open";
              $scope.hamburgerHandler = "hamburger-open";
-            console.log("SuckaDick");
         }else{
            $scope.menuHandler= "menu-bar";
              $scope.hamburgerHandler = "hamburger"; 
-            console.log("SuckNoDick");
         }
     }
     
@@ -96,7 +94,6 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         .fadeIn()
         .find('.modalen')
         .fadeIn();
-        $scope.menuAction();
     }
     
     $scope.closeModal = function(){

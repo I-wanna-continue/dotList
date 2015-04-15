@@ -7,21 +7,25 @@
 <div class="content-block">
             
     <div class="headline-">
-        <span class="itemCount">{{allLists.length}}</span>
-        <h3>Your lists</h3>
+        <h3>{{ title }}</h3>
     </div>
 
-    <div class="lists-content">
-
-        <div ng-repeat="list in allLists" class="allListBlock">
-
-            <div class="allListTitle"><p>{{list.title| limitTo: 20}}{{list.title.length>20 ?"...": ""}}</p></div>
-
-            <div class="forward-icon"><a href="#/activelist/{{ list.id }}"><span><i class="fa fa-chevron-right fa-2x"></i></span></a></div>
+    <div class="profile-content">
         
+        <div class="profile-block">
+            <div class="option-circle"><i class="fa fa-cogs fa-4x"></i><p>Settings</p></div>
+            <div class="option-circle"><i class="fa fa-info fa-5x"></i><p>Information</p></div>
         </div>
-
+        <div class="profile-block">
+            <div class="option-circle"><i class="fa fa-bar-chart fa-4x"></i><p>Statistics</p></div>
+            <div class="option-circle"><i class="fa fa-frown-o fa-4x"></i><p>Delete account</p></div>
+        </div>
     </div>
+
+    
+
+
+
 </div>
 
 

@@ -1,0 +1,1 @@
+app.controller("profileCtrl",["$scope",function(e){e.title="profile",e.menuHandler="menu-bar",e.hamburgerHandler="hamburger",e.menuAction=function(){"menu-bar"==e.menuHandler?(e.menuHandler="menu-bar-open",e.hamburgerHandler="hamburger-open"):(e.menuHandler="menu-bar",e.hamburgerHandler="hamburger")}}]);

@@ -1,6 +1,6 @@
 #overlay
 	+size(100%)
-	background: rgba(0,0,0,0.5)
+	background: rgba(0,0,0,0.8)
 	position: absolute
 	top: 0
 	left: 0
@@ -43,12 +43,13 @@
 				
 			::-webkit-input-placeholder
 				color: #333
-				font-size: 20px
-
+				font:
+					size: 20px
+					weight: bold
 
 		
 		.addList
-			width: 35%
+			width: 70%
 			margin: 10px auto 10px auto
 			+display(flex)
 			flex-wrap: wrap
@@ -60,7 +61,9 @@
 
 			::-webkit-input-placeholder
 				color: #333
-				font-size: 16px
+				font:
+					size: 16px
+					weight: bold
 
 			span
 				width: 20%
