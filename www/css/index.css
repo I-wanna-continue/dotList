@@ -321,6 +321,7 @@ table {
   .content-block .lists-content {
     width: 100%;
     height: 70%;
+    background: pink;
     overflow: auto; }
     .content-block .lists-content .listBlockWrapper {
       width: 100%; }
