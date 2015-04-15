@@ -1022,7 +1022,6 @@ table {
 .profile-content {
   width: 100%;
   height: 70%;
-  overflow: auto;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1084,7 +1083,7 @@ table {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  margin: 40% 0; }
+  margin: 20% 0; }
   .option-circle p {
     font-size: 14px;
     font-weight: bold; }
