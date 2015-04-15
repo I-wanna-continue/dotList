@@ -6,7 +6,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 	$scope.list = [];
 
 	$scope.listTitle = "";
-    $scope.serchword = "";
+    $scope.serchword = "a";
 
     
   $scope.menuHandler = "menu-bar";
