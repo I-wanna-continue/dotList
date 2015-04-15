@@ -65,11 +65,9 @@ table {
   #login-wrap .face {
     position: absolute;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
     height: 450px;
     padding: 20px 0 30px 0;
-    backface-visibility: hidden;
-    box-shadow: 0 0 5px #000; }
+    backface-visibility: hidden; }
     #login-wrap .face .logo {
       width: 100%;
       height: auto;
@@ -116,8 +114,7 @@ table {
         color: #fff;
         text-transform: uppercase;
         letter-spacing: 2px;
-        display: block;
-        text-shadow: 0px 4px 9px #969696; }
+        display: block; }
     #login-wrap .face .slogan {
       display: -webkit-box;
       display: -moz-box;
@@ -148,7 +145,7 @@ table {
       color: #fff; }
     #login-wrap .face .login-input-form {
       width: 80%;
-      height: 20px;
+      height: 30px;
       margin: 0 auto 50px auto;
       display: block;
       background: transparent;
@@ -161,15 +158,41 @@ table {
       color: #FDFCFD;
       font-size: 16px;
       text-transform: uppercase; }
+    #login-wrap .face .login-input-form2 {
+      width: 100%;
+      height: 50px;
+      padding-left: 20px;
+      margin-bottom: 1px;
+      display: block;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      color: #FDFCFD;
+      font-size: 20px;
+      outline: none; }
+    #login-wrap .face ::-webkit-input-placeholder {
+      color: #FDFCFD;
+      font-size: 16px;
+      text-transform: uppercase; }
     #login-wrap .face .login-btn {
-      background: transparent;
       color: #fff;
       display: block;
       width: 80%;
-      border-radius: 15px;
+      background: transparent;
+      border-radius: 18px;
       padding: 10px;
       font-size: 20px;
-      border: 1px solid #FDFCFD;
+      border: 1px solid #fff;
+      margin: 0 auto 10px auto; }
+    #login-wrap .face .login-btn2 {
+      color: #fff;
+      background: none;
+      display: block;
+      width: 80%;
+      padding: 10px;
+      font-size: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid;
+      border-color: rgba(255, 255, 255, 0.1);
       margin: 0 auto 10px auto; }
   #login-wrap .back {
     display: block;
@@ -211,7 +234,8 @@ table {
   .backLogo h2 {
     font-size: 30px; }
   .backLogo p {
-    font-size: 12px; }
+    font-size: 12px;
+    margin-bottom: 20px; }
 
 .registerForm {
   width: 80%;
@@ -258,9 +282,9 @@ table {
   width: 80%;
   margin: 20px auto 70px; }
   .registerForm2 .full-form {
-    width: 100%;
-    height: 20px;
-    margin: 0 auto 40px auto;
+    width: 80%;
+    height: 30px;
+    margin: 0 auto 50px auto;
     display: block;
     background: transparent;
     border: none;
@@ -269,7 +293,9 @@ table {
     font-size: 20px;
     outline: none; }
   .registerForm2 ::-webkit-input-placeholder {
-    font-size: 14px !important; }
+    color: #FDFCFD;
+    font-size: 16px;
+    text-transform: uppercase; }
 
 .spinner {
   height: 40px;
@@ -281,63 +307,10 @@ table {
   z-index: 999;
   display: none; }
 
-.topBar {
-  width: 100%;
-  height: 10%;
-  background: #232323;
-  position: relative;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  -o-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end; }
-  .topBar span {
-    width: 20%;
-    height: 100%;
-    margin-right: 1px;
-    color: #ccc;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
-    cursor: pointer; }
-
 .content-block {
   width: 100%;
   height: 90%;
-  background: #323232;
+  background: rgba(50, 50, 50, 0.4);
   border-top: 1px solid #1f1f1f;
   position: fixed;
   bottom: 0;
@@ -384,7 +357,7 @@ table {
       width: 90%;
       height: 60px;
       margin: 0 auto 2px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.8);
       box-shadow: 0 0 3px #000;
       display: -webkit-box;
       display: -moz-box;
@@ -772,7 +745,8 @@ table {
   width: 40px;
   border-radius: 50%;
   border: 1px solid #333;
-  background: lightcoral;
+  background: #d55e64;
+  z-index: 999;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1108,13 +1082,16 @@ body {
     color: #fff !important; }
 
 ion-view {
-  background: url("../img/bg.jpg") center center, no-repeat;
-  background-position: cover; }
+  background: url("../img/back.jpg") bottom center;
+  background-position: cover;
+  background-size: 300% 100%; }
 
 #bg {
   height: 100%;
   width: 100%;
-  background: #fff;
+  background: url("../img/back.jpg") center no-repeat;
+  background-position: cover;
+  background-size: 300% 100%;
   position: absolute;
   top: 0;
   left: 0; }
@@ -1124,10 +1101,10 @@ ion-view {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background: #333;
+  height: 10.2%;
+  background: #232323;
   display: none;
-  z-index: 999; }
+  z-index: 99; }
   .search-bar .search-input-header {
     border: none;
     font-family: "Open sans";
@@ -1148,6 +1125,59 @@ ion-view {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase; }
+
+.topBar {
+  width: 100%;
+  height: 10%;
+  background: #232323;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end; }
+  .topBar span {
+    width: 20%;
+    height: 100%;
+    margin-right: 1px;
+    color: #ccc;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    cursor: pointer; }
 
 .ham-menu {
   position: fixed;
@@ -1188,9 +1218,8 @@ ion-view {
     margin-top: 0;
     height: 50px;
     width: 50px;
-    background: lightcoral;
+    background: #d55e64;
     border-radius: 50%;
-    border: 1px solid #fff;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1224,9 +1253,8 @@ ion-view {
     margin-top: -160px;
     height: 50px;
     width: 50px;
-    background: lightcoral;
+    background: #d55e64;
     border-radius: 50%;
-    border: 1px solid #fff;
     display: -webkit-box;
     display: -moz-box;
     display: box;

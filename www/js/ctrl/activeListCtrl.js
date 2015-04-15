@@ -57,7 +57,6 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
     
     $scope.search = function(){
         $(".search-bar").slideToggle("slow");
-        $scope.menuAction();
     }
     
     $scope.openModal = function(){

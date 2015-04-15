@@ -1,4 +1,11 @@
 
+//Change classes 
+//	face
+//	login-btn
+//	login-input-form
+
+
+
 //wrapper around login container
 #login-wrap
 	position: relative
@@ -21,11 +28,13 @@
 	.face 
 		position: absolute
 		width: 100%
-		background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0,0,0,0.4) 100%)
+		//background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(0,0,0,0.4) 100%)
+		//background: linear-gradient(to bottom, rgba(135, 178, 187, 0.7) 0%, rgba(0,0,0,0.4) 100%)
 		height: 450px
 		padding: 20px 0 30px 0 
 		backface-visibility: hidden
-		box-shadow: 0 0 5px #000
+		//box-shadow: 0 0 5px #000
+
 
 
 		//Logo box
@@ -58,7 +67,6 @@
 				text-transform: uppercase
 				letter-spacing: 2px
 				display: block
-				text-shadow: 0px 4px 9px rgba(150, 150, 150, 1)
 
 
 		//text under logo
@@ -73,7 +81,7 @@
 		//Login inputs "Username", "Password"
 		.login-input-form
 			width: 80%
-			height: 20px
+			height: 30px
 			margin: 0 auto 50px auto
 			display: block
 			background: transparent
@@ -90,17 +98,53 @@
 			text-transform: uppercase
 
 
+		.login-input-form2
+			width: 100%
+			height: 50px
+			padding-left: 20px
+			margin-bottom: 1px
+			display: block
+			background: rgba(255,255,255,0.8)
+			border: none
+			color: #FDFCFD
+			font-size: 20px
+			outline: none
+
+		//Placeholder styles
+		::-webkit-input-placeholder
+			color: #FDFCFD
+			font-size: 16px
+			text-transform: uppercase
+
+
 		// Login and signup buttons
+
+		//Standard buttons
 		.login-btn
-			background: transparent
+			//background: rgba(255,255,255,0.3)
+			//border-color: rgba(255,255,255,0.1)
 			color: #fff
 			display: block
 			width: 80%
-			border-radius: 15px
+			background: transparent
+			border-radius: 18px
 			padding: 10px
 			font-size: 20px
-			border: 1px solid #FDFCFD
+			border: 1px solid #fff
 			margin: 0 auto 10px auto
+
+		.login-btn2
+			color: #fff
+			background: none
+			display: block
+			width: 80%
+			padding: 10px
+			font-size: 20px
+			background: rgba(255,255,255,0.1)
+			border: 1px solid 
+			border-color: rgba(255,255,255,0.1)
+			margin: 0 auto 10px auto
+
 
 
 
@@ -129,6 +173,7 @@
 
 	p 
 		font-size: 12px
+		margin-bottom: 20px
 
 //Registerform First / Lastname
 .registerForm
@@ -160,9 +205,9 @@
 	
 	//Email and passwords form
 	.full-form
-		width: 100%
-		height: 20px
-		margin: 0 auto 40px auto
+		width: 80%
+		height: 30px
+		margin: 0 auto 50px auto
 		display: block
 		background: transparent
 		border: none
@@ -171,7 +216,10 @@
 		font-size: 20px
 		outline: none
 
+	//Placeholder styles
 	::-webkit-input-placeholder
-		font-size: 14px !important
+		color: #FDFCFD
+		font-size: 16px
+		text-transform: uppercase
 
 

@@ -28,12 +28,24 @@ body
 
 
 ion-view
-	background: url('../img/bg.jpg') center center, no-repeat
+	//Berg m sjö
+	//background: url('../img/bg.jpg') center center
+	
+	// green blurred 
+	background: url('../img/back.jpg') bottom center
+
+	//Sidewalk
+	//background: url('http://www.wallpapersam.com/wp-content/uploads/2013/02/City-Street-House-Sidewalk.jpg') top center no-repeat
+	
+	//background: url('http://app-pharm.com/wp-content/uploads/2013/11/layer_background3.jpg') center no-repeat
 	background-position: cover
+	background-size: 300% 100%
 
 #bg
 	+size(100%)
-	background: #fff
+	background: url('../img/back.jpg') center no-repeat
+	background-position: cover
+	background-size: 300% 100%
 	position: absolute
 	top: 0
 	left: 0
@@ -43,10 +55,10 @@ ion-view
 	top: 0
 	left: 0
 	width: 100%
-	height: 80px
-	background: #333
+	height: 10.2%
+	background: rgba(35,35,35,1)
 	display: none
-	z-index: 999
+	z-index: 99
 
 	.search-input-header
 		border: none
@@ -71,6 +83,27 @@ ion-view
 		font-weight: bold
 		text-transform: uppercase
 
+//Topbar
+
+.topBar
+	width: 100%
+	height: 10%
+	background: rgba(35,35,35,1)
+	position: relative
+	+display(flex)
+	+justify-content(flex-end)
+
+	span 
+		width: 20%
+		height: 100%
+		margin-right: 1px
+		color: #ccc
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
+		cursor: pointer
+
+
 
 //Menu hamburger
 
@@ -92,9 +125,8 @@ ion-view
 		position: relative
 		margin-top: 0
 		+size(50px)
-		background: lightcoral
+		background: #d55e64
 		border-radius: 50%
-		border: 1px solid #fff
 		+display(flex)
 		+align-items(center)
 		+justify-content(center)
@@ -104,9 +136,8 @@ ion-view
 		position: relative
 		margin-top: -160px
 		+size(50px)
-		background: lightcoral
+		background: #d55e64
 		border-radius: 50%
-		border: 1px solid #fff
 		+display(flex)
 		+align-items(center)
 		+justify-content(center)
