@@ -320,7 +320,7 @@ table {
     -ms-flex-pack: center; }
   .content-block .lists-content {
     width: 100%;
-    height: 70%;
+    height: 300px;
     overflow: auto; }
     .content-block .lists-content .allListBlock {
       width: 90%;
