@@ -450,7 +450,8 @@ table {
         height: 40px;
         font-size: 20px;
         color: #333;
-        outline: none; }
+        outline: none;
+        text-transform: capitalize; }
       #overlay .modalen .head ::-webkit-input-placeholder {
         color: #333;
         font-size: 20px; }
@@ -536,6 +537,7 @@ table {
     -ms-flex-pack: justify;
     background: linear-gradient(to bottom, rgba(152, 152, 152, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
     padding: 5px;
+    text-transform: capitalize;
     box-shadow: 0 0 3px #000; }
     .item-wrap .item input[type=checkbox] {
       visibility: hidden; }
@@ -774,7 +776,7 @@ table {
 .add-item-container {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 70px;
   margin-bottom: 40px; }
   .add-item-container input {
     width: 90%;
@@ -785,7 +787,7 @@ table {
     padding: 0 70px 0 20px; }
   .add-item-container ::-webkit-input-placeholder {
     color: #333;
-    text-transform: uppercase; }
+    text-transform: capitalize; }
   .add-item-container span {
     position: absolute;
     right: 13%;
@@ -798,10 +800,11 @@ table {
   .items-list-container .items-list-block {
     position: relative;
     width: 90%;
-    height: 40px;
+    height: 60px;
     margin: 0 auto 2px;
     background: #fff;
     box-shadow: 0 0 3px #000;
+    text-transform: capitalize;
     display: -webkit-box;
     display: -moz-box;
     display: box;
