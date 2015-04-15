@@ -8,7 +8,7 @@
             
 	<div class="headline-1">
 	    <span class="itemCount">{{currentTask}}</span>
-	    <h3>Title</h3>
+	    <h3>{{title}}</h3>
 	</div>
 
 	<div class="add-item-container">
@@ -18,8 +18,8 @@
 
 	<div class="items-list-container" >
 		
-		<div ng-repeat="items in selectedList" class="items-list-block" ng-animate="slide" ng-class=" (items.checked) ? 'completed' : ''">
-			<span ng-click="completeTask($index)"><i class="fa  fa-3x" ng-class=" (items.checked) ? 'fa-check-square-o completedcheck' : 'fa-square-o'"></i></span>
+		<div ng-repeat="items in selectedList | filter: { title: serchword }" class="items-list-block" ng-animate="slide" ng-class=" (items.complete) ? 'completed' : ''">
+			<span ng-click="completeTask($index)"><i class="fa  fa-3x" ng-class=" (items.complete) ? 'fa-check-square-o completedcheck' : 'fa-square-o'"></i></span>
 			<p>{{ items["title"]}}</p>
 			<span class="close-icon" ng-click="deleteItem($index)"><i class="fa fa-close fa-2x"></i></span>
 		</div>
@@ -32,7 +32,7 @@
      
 
         <div class="search-bar">
-            <input type="text" class="search-input-header" placeholder="search...">    
+            <input type="text" class="search-input-header" placeholder="search..." ng-model="serchword">    
         </div>
         
         <div class="hide-on-keyboard-open">
