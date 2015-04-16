@@ -22,15 +22,30 @@
                 </div>
                
             </div>
-             <div class="list-options">
-                    <span><i class="fa fa-pencil fa-2x"></i></span>
-                    <span><i class="fa fa-trash-o fa-2x"></i></span>
-                    <span><i class="fa fa-users fa-2x"></i></span> 
-            </div>
-        </div>
-       
 
+            <!-- Fixa så att bara admin av listan ser options -->
+            
+             <div class="list-options">
+                <div id="flip-container">
+                    <div id="first-side">
+                        <div class="front-side">
+                            <span><i class="fa fa-pencil fa-2x"></i></span>
+                            <span ng-click="flip()"><i class="fa fa-user-plus fa-2x"></i></span> 
+                            <span ng-click="deleteList($index)"><i class="fa fa-trash-o fa-2x"></i></span>
+                        </div>
+                        <div class="back-side facet">
+                            <div class="add-user">
+                                <input type="text" placeholder="Add user">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
+
+   
 </div>
 
 

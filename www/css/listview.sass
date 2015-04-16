@@ -101,22 +101,79 @@
 			display: none
 
 
-			span 
-				width: 25%
+			#flip-container
+				position: relative
+				width: 100%
 				height: 40px
-				float: left
-				cursor: pointer
-				+display(flex)
-				+justify-content(center)
-				+align-items(center)
+				z-index: 1
+
+
+			#flip-container
+				perspective: 1000
+
+
+				#first-side 
+					width: 100%
+					height: 100%
+					transform-style: preserve-3d
+					transition: all 1.0s linear
+					
+				
+
+					span 
+						width: 25%
+						height: 40px
+						float: left
+						cursor: pointer
+						+display(flex)
+						+justify-content(center)
+						+align-items(center)
+
+				
+
+				.facet
+					position: absolute
+					width: 100%
+					height: 100%
+					backface-visibility: hidden
+					
+				
+				.back-side.facet
+					display: block
+					height: 40px
+					color: white
+					background: green
+					transform: rotateX(180deg)
+
+					.add-user
+						position: relative
+						width: 100%
+						height: 40px
+						color: #000
+						+display(flex)
+						+flex-wrap(wrap)
+						+justify-content(space-between)
+						box-shadow: 0 0 3px #000
+
+
+						input 
+							border: none
+							width: 100%
+							height: 40px
+							padding-left: 10px
+							font:
+								weight: bold
+								size: 14px
+
+						::-webkit-input-placeholder
+							color: #333
+							text-transform: capitalize
 				
 
 
-
-
-
-
 	
+
+
 
 
 

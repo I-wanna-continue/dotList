@@ -11,11 +11,24 @@ app.controller('listCtrl', ['$scope', function ($scope) {
   $scope.menuHandler = "menu-bar";
   $scope.hamburgerHandler = "hamburger";
 
+
+  //If user is admin of list
+
   $scope.listOptions = function($event){
     console.log($($event.target).parent().parent().find(".list-options"));
     $($event.target).parent().parent().find(".list-options").slideToggle().css("display", "flex");
    // ($($event.target).parent().parent().find(".list-options") ? $scope.list[$index]["complete"] = false : $scope.list[$index]["complete"] = true;
 
+
+  }
+
+  //Delete items in a List
+  $scope.deleteList = function($index){
+
+    if(confirm("Are you sure you want to delete " + $scope.allLists[$index]["title"] + "?")){
+            $scope.allLists.splice($index, 1);
+            $scope.saveLists();
+        }
 
   }
 
@@ -128,6 +141,19 @@ app.controller('listCtrl', ['$scope', function ($scope) {
             lists: $scope.allLists
           });
         });
+    }
+
+
+    $scope.flipped = false;
+    
+    $scope.flip = function (){
+        if($scope.flipped){
+            $("#first-side").css({"transform": "rotateX(0deg)", });
+            $scope.flipped = false;
+        }else{
+            $("#first-side").css({"transform": "rotateX(180deg)", });
+            $scope.flipped = true;
+        }    
     }
 
 }]);
