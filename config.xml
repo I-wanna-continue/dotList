@@ -5,7 +5,7 @@
        Mobile ToDo application that syncs with a website!
     </description>
   <author>
-      Nils Löfgren & Filip Ramstedt
+      Nils Löfgren and Filip Ramstedt
     </author>
   <content src="index.html"/>
   <access origin="*"/>
