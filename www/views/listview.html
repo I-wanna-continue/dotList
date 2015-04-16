@@ -26,11 +26,12 @@
             <!-- Fixa så att bara admin av listan ser options -->
             
              <div class="list-options">
-                <div id="flip-container">
-                    <div id="first-side">
+                <div class="flip-container">
+                    <span class="flipped" style="display: none;">0</span>
+                    <div class="first-side">
                         <div class="front-side">
                             <span><i class="fa fa-pencil fa-2x"></i></span>
-                            <span ng-click="flip()"><i class="fa fa-user-plus fa-2x"></i></span> 
+                            <span ng-click="flip($event)"><i class="fa fa-user-plus fa-2x"></i></span> 
                             <span ng-click="deleteList($index)"><i class="fa fa-trash-o fa-2x"></i></span>
                         </div>
                         <div class="back-side facet">

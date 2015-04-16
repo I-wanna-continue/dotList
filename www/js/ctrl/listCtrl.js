@@ -15,12 +15,13 @@ app.controller('listCtrl', ['$scope', function ($scope) {
   //If user is admin of list
 
   $scope.listOptions = function($event){
-    console.log($($event.target).parent().parent().find(".list-options"));
+    console.log($($event.target).parent().find(".list-options"));
     $($event.target).parent().parent().find(".list-options").slideToggle().css("display", "flex");
    // ($($event.target).parent().parent().find(".list-options") ? $scope.list[$index]["complete"] = false : $scope.list[$index]["complete"] = true;
-
-
   }
+
+
+
 
   //Delete items in a List
   $scope.deleteList = function($index){
@@ -143,17 +144,18 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         });
     }
 
-
     $scope.flipped = false;
     
-    $scope.flip = function (){
-        if($scope.flipped){
-            $("#first-side").css({"transform": "rotateX(0deg)", });
-            $scope.flipped = false;
+    $scope.flip = function ($event){
+      //console.log($($event.target).parent().parent().parent().parent().find(".flipped").html());
+        if($($event.target).parent().parent().parent().parent().find(".flipped").html() == "1"){
+            //console.log($($event.target).parent().parent().parent());
+           $($event.target).parent().parent().parent().css({"transform": "rotateX(0deg)"});
+            $($event.target).parent().parent().parent().parent().find(".flipped").html("0");
         }else{
-            $("#first-side").css({"transform": "rotateX(180deg)", });
-            $scope.flipped = true;
-        }    
+             $($event.target).parent().parent().parent().css({"transform": "rotateX(180deg)", });
+             $($event.target).parent().parent().parent().parent().find(".flipped").html("1");
+        }
     }
 
 }]);

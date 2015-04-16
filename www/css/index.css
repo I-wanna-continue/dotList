@@ -480,20 +480,20 @@ table {
       justify-content: space-between;
       -ms-flex-pack: justify;
       display: none; }
-      .content-block .lists-content .list-options #flip-container {
+      .content-block .lists-content .list-options .flip-container {
         position: relative;
         width: 100%;
         height: 40px;
         z-index: 1; }
-      .content-block .lists-content .list-options #flip-container {
+      .content-block .lists-content .list-options .flip-container {
         perspective: 1000; }
-        .content-block .lists-content .list-options #flip-container #first-side {
+        .content-block .lists-content .list-options .flip-container .first-side {
           width: 100%;
           height: 100%;
           transform-style: preserve-3d;
           transition: all 1s linear;
           background: rgba(255, 255, 255, 0.8); }
-          .content-block .lists-content .list-options #flip-container #first-side span {
+          .content-block .lists-content .list-options .flip-container .first-side span {
             width: 25%;
             height: 40px;
             float: left;
@@ -523,18 +523,18 @@ table {
             -o-align-items: center;
             align-items: center;
             -ms-flex-align: center; }
-        .content-block .lists-content .list-options #flip-container .facet {
+        .content-block .lists-content .list-options .flip-container .facet {
           position: absolute;
           width: 100%;
           height: 100%;
           backface-visibility: hidden; }
-        .content-block .lists-content .list-options #flip-container .back-side.facet {
+        .content-block .lists-content .list-options .flip-container .back-side.facet {
           display: block;
           height: 40px;
           color: white;
           background: green;
           transform: rotateX(180deg); }
-          .content-block .lists-content .list-options #flip-container .back-side.facet .add-user {
+          .content-block .lists-content .list-options .flip-container .back-side.facet .add-user {
             position: relative;
             width: 100%;
             height: 40px;
@@ -563,7 +563,7 @@ table {
             justify-content: space-between;
             -ms-flex-pack: justify;
             box-shadow: 0 0 3px #000; }
-            .content-block .lists-content .list-options #flip-container .back-side.facet .add-user input {
+            .content-block .lists-content .list-options .flip-container .back-side.facet .add-user input {
               border: none;
               width: 100%;
               height: 40px;
@@ -571,7 +571,7 @@ table {
               padding-left: 10px;
               font-weight: bold;
               font-size: 14px; }
-            .content-block .lists-content .list-options #flip-container .back-side.facet .add-user ::-webkit-input-placeholder {
+            .content-block .lists-content .list-options .flip-container .back-side.facet .add-user ::-webkit-input-placeholder {
               color: #333;
               text-transform: capitalize; }
 
