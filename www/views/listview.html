@@ -1,6 +1,5 @@
 
 <ion-view>
-<div id="bg"></div>
 <div class="topBar">
     <span><i class="fa fa-refresh fa-2x"></i></span><span id="add-plus" ng-click="openModal()"><i class="fa fa-plus fa-2x"></i></span><span><i class="fa fa-pencil fa-2x"></i></span>
 </div>
@@ -13,13 +12,23 @@
 
     <div class="lists-content">
 
-        <div ng-repeat="list in allLists" class="allListBlock">
+        <div class="listBlockWrap" ng-repeat="list in allLists">
+            <div  class="allListBlock" ng-click="listOptions($event)">
 
-            <div class="allListTitle"><p>{{list.title| limitTo: 20}}{{list.title.length>20 ?"...": ""}}</p></div>
+                <div class="allListTitle"><p>{{list.title| limitTo: 20}}{{list.title.length>20 ?"...": ""}}</p></div>
 
-            <div class="forward-icon"><a href="#/activelist/{{ list.id }}"><span><i class="fa fa-chevron-right fa-2x"></i></span></a></div>
-        
+                <div class="forward-icon"><a href="#/activelist/{{ list.id }}">
+                        <span><i class="fa fa-chevron-right fa-2x"></i></span></a>
+                </div>
+               
+            </div>
+             <div class="list-options">
+                    <span><i class="fa fa-pencil fa-2x"></i></span>
+                    <span><i class="fa fa-trash-o fa-2x"></i></span>
+                    <span><i class="fa fa-users fa-2x"></i></span> 
+            </div>
         </div>
+       
 
     </div>
 </div>
@@ -79,7 +88,7 @@
                 </div>
                 <div class="block "><a  ng-href="#/profile">
                     <span class="four">
-                        <i class="fa fa-user fa-2x"></i>
+                        <i class="fa fa-cog fa-2x"></i>
                     </span></a>
                 </div>
                 <div class="block "><a  ng-href="#/">

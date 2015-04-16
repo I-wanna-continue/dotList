@@ -11,6 +11,14 @@ app.controller('listCtrl', ['$scope', function ($scope) {
   $scope.menuHandler = "menu-bar";
   $scope.hamburgerHandler = "hamburger";
 
+  $scope.listOptions = function($event){
+    console.log($($event.target).parent().parent().find(".list-options"));
+    $($event.target).parent().parent().find(".list-options").slideToggle().css("display", "flex");
+   // ($($event.target).parent().parent().find(".list-options") ? $scope.list[$index]["complete"] = false : $scope.list[$index]["complete"] = true;
+
+
+  }
+
     $scope.init = function(){
         $scope.db.info().then(function (info) {
           console.log(info);
