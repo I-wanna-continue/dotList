@@ -153,7 +153,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
            $($event.target).parent().parent().parent().css({"transform": "rotateX(0deg)"});
             $($event.target).parent().parent().parent().parent().find(".flipped").html("0");
         }else{
-             $($event.target).parent().parent().parent().css({"transform": "rotateX(180deg)", });
+             $($event.target).parent().parent().parent().css({"transform": "rotateX(180deg)"});
              $($event.target).parent().parent().parent().parent().find(".flipped").html("1");
         }
     }
