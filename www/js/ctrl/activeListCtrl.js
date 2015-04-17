@@ -1,5 +1,5 @@
-app.controller('activeListCtrl', function ($scope, $stateParams) {
-    
+app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
+
     $scope.db = new PouchDB('dotlist');
     $scope.title = "";
     $scope.serchword = "";
@@ -43,7 +43,7 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
 		$scope.currentTask++
         $scope.saveItems();
 	}
-   
+
     $scope.menuAction = function(){
         if($scope.menuHandler == "menu-bar"){
            // $("#menu-bar").css("bottom", "0");
@@ -54,11 +54,11 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
              $scope.hamburgerHandler = "hamburger";
         }
     }
-    
+
     $scope.search = function(){
         $(".search-bar").slideToggle("slow");
     }
-    
+
     $scope.openModal = function(){
         $('#overlay')
         .fadeIn()
@@ -66,14 +66,14 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
         .fadeIn();
         $scope.menuAction();
     }
-    
+
     $scope.closeModal = function(){
          $('#overlay')
          .fadeOut()
          .find('.modalen')
          .fadeOut();
     }
-    
+
     $scope.getItems = function(){
         $scope.db.get('lists').then(function (doc) {
             console.log(doc["lists"]);
@@ -89,9 +89,9 @@ app.controller('activeListCtrl', function ($scope, $stateParams) {
                 if($scope.selectedList[i].complete == false) $scope.currentTask++;
 
             }
-        });     
+        });
     }
-    
+
     $scope.saveItems = function(){
         $scope.db.get('lists').then(function(doc) {
           //var lists = doc["lists"];
