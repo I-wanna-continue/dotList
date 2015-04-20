@@ -17,7 +17,11 @@ var app = angular.module('starter', ['ionic', 'ngAnimate'])
     }
   });
 })
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.withCredentials = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  
   $stateProvider
   .state('index', {
     url: '/',
@@ -39,7 +43,7 @@ var app = angular.module('starter', ['ionic', 'ngAnimate'])
     templateUrl: 'views/profile.html',
     controller: 'profileCtrl'
   });
-    
+
   $urlRouterProvider.otherwise('/');
 
 });

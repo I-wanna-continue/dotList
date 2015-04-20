@@ -1,6 +1,6 @@
 app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
 
-    $scope.db = new PouchDB('dotlist');
+  $scope.db = new PouchDB('dotlist');
 
 	$scope.allLists = [];
 	$scope.list = [];
@@ -35,7 +35,7 @@ app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
 
     $scope.init = function(){
         $scope.db.info().then(function (info) {
-          console.log(info);
+          //console.log(info);
           if(info["doc_count"] == 0) {
               $scope.db.put({
                   _id: 'lists',

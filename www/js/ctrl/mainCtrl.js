@@ -1,4 +1,20 @@
-app.controller('mainCtrl', ['$scope', function ($scope, ajaxFactory) {
+app.controller('mainCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFactory) {
+
+    $scope.login = function(){
+      //console.log($scope.username, $scope.password);
+      ajaxFactory.ajax(
+        {
+          "data":{"email":$scope.username,"password":$scope.password},
+          "method":"POST",
+          "url": "AjaxLogin"
+        },function(){
+
+        },function(){
+          
+        });
+
+    }
+
 
     $scope.flipped = false;
 

@@ -10,14 +10,15 @@
                     </div>
                 </div>
 
-                
+
 
                 <input type="text" class="login-input-form" placeholder="E-mail" ng-model="username">
 
-                <input type="password" class="login-input-form" placeholder="Password" ng-model="username">
+                <input type="password" class="login-input-form" placeholder="Password" ng-model="password">
 
 
-                <a href="#/lists"> <input type="button" class="login-btn2" value="Login"> </a>
+                <!--<a href="#/lists"> <input type="button" class="login-btn2" value="Login"> </a>-->
+                <input type="button" class="login-btn2" ng-click="login()" value="Login">
                 <input type="button" id="register" class="login-btn2" value="Sign up" ng-click="flip()">
 
             </div>

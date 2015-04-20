@@ -1,19 +1,32 @@
 app.factory('ajaxFactory', function($http) {
+
+  var headers = {
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods' : 'POST, GET',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    };
+
     return {
         ajax: function(data,succsescb,errorcb) {
-          var baseurl = "123.12.123.21.3";
+          var baseurl = "http://innk94-001-site1.smarterasp.net/Service1.asmx";
+          //console.log(baseurl+"/"+data["url"]);
           $http({
            method: data["method"],
            url: baseurl+"/"+data["url"],
            headers: {
-             'Content-Type': "json"
+             'Access-Control-Allow-Origin' : '*',
+             'Access-Control-Allow-Methods' : 'POST, GET',
+             'Content-Type': 'application/json',
+             'Accept': 'application/json'
            },
            data: data["data"]
           }).success(function(data){
-            console.log(data);
+            //console.log(data);
+            alert(data);
             //succsescb();
           }).error(function(data, status){
-            console.log("data: "+ data " status:" + status);
+            console.log("data: "+ data + " status:" + status);
             //errorcb();
           });
         }
