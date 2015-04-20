@@ -15,18 +15,17 @@ app.factory('ajaxFactory', function($http) {
            method: data["method"],
            url: baseurl+"/"+data["url"],
            headers: {
-             'Access-Control-Allow-Origin' : '*',
+             'Access-Control-Allow-Origin' : baseurl+"/"+data["url"],
              'Access-Control-Allow-Methods' : 'POST, GET',
-             'Content-Type': 'application/json',
+             'Content-Type': 'json',
              'Accept': 'application/json'
            },
            data: data["data"]
           }).success(function(data){
-            //console.log(data);
-            alert(data);
+            console.log(data);
             //succsescb();
           }).error(function(data, status){
-            console.log("data: "+ data + " status:" + status);
+            console.log(data);
             //errorcb();
           });
         }
