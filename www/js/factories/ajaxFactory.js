@@ -9,9 +9,10 @@ app.factory('ajaxFactory', function($http) {
 
     return {
         ajax: function(data,succsescb,errorcb) {
-          /*        
+
           var baseurl = "http://innk94-001-site1.smarterasp.net/Service1.asmx";
-          console.log(data["data"]);
+
+          /*console.log(data["data"]);
           $http({
            method: data["method"],
            url: baseurl+"/"+data["url"],
@@ -26,15 +27,15 @@ app.factory('ajaxFactory', function($http) {
             console.log(data);
             //errorcb();
           });*/
-            
+
           var parameters = {
                 "email": "HallaBalla@hej.he",
                 "password": "Test123123",
             };
 
             $.ajax({
-                type: "POST",
-                url: "http://innk94-001-site1.smarterasp.net/Service1.asmx/AjaxLogin",
+                type: data["method"],
+                url: data["url"],
                 dataType: "json",
                 data: data["data"],
                 success: function (msg) {
@@ -55,9 +56,9 @@ app.factory('ajaxFactory', function($http) {
                     console.log(err);
                     //console.log(err.responseText);
                 }
-            });    
-            
-            
+            });
+
+
         }
     };
 });
