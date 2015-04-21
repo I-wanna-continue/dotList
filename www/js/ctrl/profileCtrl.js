@@ -1,5 +1,5 @@
-app.controller('profileCtrl', ['$scope', function ($scope) {
-    
+app.controller('profileCtrl', ['$scope', function ($scope, ajaxFactory) {
+
     $scope.title = "profile";
     $scope.menuHandler = "menu-bar";
     $scope.hamburgerHandler = "hamburger";
@@ -7,7 +7,7 @@ app.controller('profileCtrl', ['$scope', function ($scope) {
 
 
 
-    
+
     $scope.menuAction = function(){
         if($scope.menuHandler == "menu-bar"){
            // $("#menu-bar").css("bottom", "0");
@@ -15,7 +15,7 @@ app.controller('profileCtrl', ['$scope', function ($scope) {
              $scope.hamburgerHandler = "hamburger-open";
         }else{
            $scope.menuHandler= "menu-bar";
-             $scope.hamburgerHandler = "hamburger"; 
+             $scope.hamburgerHandler = "hamburger";
         }
     }
 

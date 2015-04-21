@@ -1,0 +1,152 @@
+Login: Service1.asmx/AjaxLogin
+Register: Service1.asmx/AjaxRegister
+Create List/With or without items: Service1.asmx/AjaxPostList
+Create Item: Service1.asmx/AjaxPostItem
+Get Lists/Items: Service1.asmx/AjaxGetLists
+Get Items: Service1.asmx/AjaxGetItems
+Delete Lists: Service1.asmx/AjaxRemoveList
+Get Invites: Service1.asmx/AjaxGetInvites
+Send Invite: Service1.asmx/AjaxInvite
+
+
+
+
+//loggin
+{
+  "email":email,
+  "password":password
+    
+  Response:
+"[
+	{"id":"2"},
+	{"token":"123"},
+	{"username":"Innk2"},
+	{"invites":[
+		{"invites_id":""}
+	]},
+	{"lists":[
+			[
+				{"list_id":"33","list_owner":"2","list_title":"Awesometestlist123"},
+				{"items":[
+					{"id":"19","is_active":"0","content":"test1"},
+					{"id":"20","is_active":"0","content":"test2"},
+					{"id":"21","is_active":"0","content":"test3"},
+					{"id":"22","is_active":"0","content":"mjölk"}
+				]}
+			]
+	]}
+]"
+}
+
+//register
+{
+  "email": email,
+  "username": username,
+  "password": password,
+  "confirmPassword": retype
+    
+  Response:
+    true/false
+}
+
+//create list
+{
+    var a = [
+      {"title": "test1"},
+      {"title": "test2"},
+      {"title": "test3"},
+    ];
+
+    var parameters = {
+        "listname": "testlist123",
+        "owner": "2",
+        "items": JSON.stringify(a)
+    };
+
+    response:
+        true/false
+}
+
+//create item
+{
+  "list_id":listid,
+  "content": title
+    
+    Response:
+        true/false
+}
+
+//get lists
+{
+  "user_id": userid
+    
+  Response:
+    "[
+        [
+            {"list_id":"5","list_owner":"5","list_title":"test"},
+            {"items":
+                [
+                    {"id":"8","is_active":"0","content":"test"}
+                ]
+            },
+
+            {"list_id":"6","list_owner":"5","list_title":"testlist"},
+            {"items":
+                [
+                    {"id":"","is_active":"","content":""}
+                ]
+            }
+        ]
+    ]"
+}
+
+//get items returnera i EN array och inte dirrekt
+{
+  "list_id": listid
+    
+    response:
+    {"items":
+        [
+            {"id":"19","is_active":"0","content":"test1"},
+            {"id":"20","is_active":"0","content":"test2"},
+            {"id":"21","is_active":"0","content":"test3"},
+            {"id":"22","is_active":"0","content":"mjölk"}
+        ]
+    }
+}
+
+//delete lists
+{
+  "list_id": listid
+  "user_id": userid
+    
+    response:
+    true/false
+}
+
+//get invites
+{
+  "user_id": userid,
+    
+  response:
+  "{"invites":[{"invites_id":""}]}"
+  OR 
+  "{"invites":[{"invites_id":"6","list_name":"testlist","list_owner":"Innk3"}]}"
+}
+
+//send invite
+{
+        var a = [
+             { "username": "2" },
+             { "username": "5" }
+        ];
+
+        var parameters = {
+            "list_id": "33",
+            "usernames": JSON.stringify(a)
+
+        };
+
+        Response:
+        true/false
+}

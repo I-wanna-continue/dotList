@@ -1,13 +1,13 @@
-app.controller('listCtrl', ['$scope', function ($scope) {
-    
-    $scope.db = new PouchDB('dotlist');
-    
+app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
+
+  $scope.db = new PouchDB('dotlist');
+
 	$scope.allLists = [];
 	$scope.list = [];
 
 	$scope.listTitle = "";
 
-    
+
   $scope.menuHandler = "menu-bar";
   $scope.hamburgerHandler = "hamburger";
 
@@ -35,7 +35,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 
     $scope.init = function(){
         $scope.db.info().then(function (info) {
-          console.log(info);
+          //console.log(info);
           if(info["doc_count"] == 0) {
               $scope.db.put({
                   _id: 'lists',
@@ -45,7 +45,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         });
         $scope.getLists();
     }
-    
+
 	$scope.addItem = function(){
 
 		$scope.list.push({
@@ -72,7 +72,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 	//Adding list Checkboxes
 	$scope.checkItem = function($index){
 		($scope.list[$index]["complete"]) ? $scope.list[$index]["complete"] = false : $scope.list[$index]["complete"] = true;
-	    
+
 	}
 
 
@@ -83,7 +83,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
 			items: $scope.list,
       id: $scope.allLists.length+1
 		});
-        
+
 		console.log($scope.allLists);
 		$scope.list = [];
 		$scope.listTitle = "";
@@ -92,7 +92,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
         $scope.saveLists();
 	}
 
-    
+
 
 
    $scope.menuAction = function(){
@@ -102,28 +102,28 @@ app.controller('listCtrl', ['$scope', function ($scope) {
              $scope.hamburgerHandler = "hamburger-open";
         }else{
            $scope.menuHandler= "menu-bar";
-             $scope.hamburgerHandler = "hamburger"; 
+             $scope.hamburgerHandler = "hamburger";
         }
     }
-    
+
     $scope.search = function(){
         $(".search-bar").slideToggle("slow");
     }
-    
+
     $scope.openModal = function(){
         $('#overlay')
         .fadeIn()
         .find('.modalen')
         .fadeIn();
     }
-    
+
     $scope.closeModal = function(){
          $('#overlay')
          .fadeOut()
          .find('.modalen')
          .fadeOut();
     }
-    
+
     $scope.getLists = function(){
         $scope.db.get('lists').then(function (doc) {
             console.log(doc["lists"]);
@@ -131,9 +131,9 @@ app.controller('listCtrl', ['$scope', function ($scope) {
                 $scope.allLists = doc["lists"];
             });
             //$scope.allLists = doc["lists"];
-        });     
+        });
     }
-    
+
     $scope.saveLists = function(){
         $scope.db.get('lists').then(function(doc) {
           return $scope.db.put({
@@ -145,7 +145,7 @@ app.controller('listCtrl', ['$scope', function ($scope) {
     }
 
     $scope.flipped = false;
-    
+
     $scope.flip = function ($event){
       //console.log($($event.target).parent().parent().parent().parent().find(".flipped").html());
         if($($event.target).parent().parent().parent().parent().find(".flipped").html() == "1"){
