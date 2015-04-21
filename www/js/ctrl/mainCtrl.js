@@ -1,13 +1,19 @@
-app.controller('mainCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFactory) {
-
+app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope, ajaxFactory, $state) {
+    
     $scope.login = function(){
       //console.log($scope.username, $scope.password);
       ajaxFactory.ajax(
         {
           "data":{"email":$scope.username,"password":$scope.password},
           "method":"POST",
-          "url": "AjaxLogin"
-        },function(){
+          "url": "/AjaxLogin"
+        },function(data){
+          console.log(data);
+          if(data === ""){$scope.errormsg = "Wrong email or password! try again";}
+            else{
+              var data = JSON.parse(data);
+              $state.transitionTo("lists");
+            }
 
         },function(){
           

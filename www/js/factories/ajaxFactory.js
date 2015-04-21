@@ -35,19 +35,15 @@ app.factory('ajaxFactory', function($http) {
 
             $.ajax({
                 type: data["method"],
-                url: data["url"],
+                url: baseurl + data["url"],
                 dataType: "json",
                 data: data["data"],
                 success: function (msg) {
                     console.log("Succsess!");
                     //var json  = JSON.parse(msg);
-                    if(msg === ""){console.log("empty");}
-                    else{
-                        var msg = JSON.parse(msg);
-                        for(var i = 0; i < msg.length; i++){
-                          console.log(msg[i]);
-                        }
-                    }
+                    
+                      succsescb(msg);
+                      
 
                     //console.log(msg[0]["id"]);
                 },
