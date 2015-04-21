@@ -280,11 +280,11 @@ table {
 
 .registerForm2 {
   width: 80%;
-  margin: 20px auto 70px; }
+  margin: 20px auto 50px; }
   .registerForm2 .full-form {
     width: 80%;
     height: 30px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 40px auto;
     display: block;
     background: transparent;
     border: none;

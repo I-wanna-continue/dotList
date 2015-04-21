@@ -1,11 +1,12 @@
-app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
+app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFactory) {
 
   $scope.db = new PouchDB('dotlist');
 
 	$scope.allLists = [];
 	$scope.list = [];
-
+  $scope.loading = false;
 	$scope.listTitle = "";
+
 
 
   $scope.menuHandler = "menu-bar";
@@ -76,6 +77,24 @@ app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
 	}
 
 
+  $scope.refresh = function(){
+    var loading = $scope.loading;
+    loading = true;
+      ajaxFactory.ajax({
+          "data":{
+            "user_id": $.cookie('userId')
+          },
+          "method":"POST",
+          "url": "/AjaxGetLists"
+        },function(data){
+          console.log(JSON.parse(data));
+          loading = false;
+        },function(){
+          
+      });
+
+  }
+
 	$scope.createList = function(){
 
 		$scope.allLists.push({
@@ -83,6 +102,20 @@ app.controller('listCtrl', ['$scope', function ($scope, ajaxFactory) {
 			items: $scope.list,
       id: $scope.allLists.length+1
 		});
+
+    ajaxFactory.ajax({
+        "data":{
+          "listname": $scope.listTitle,
+          "owner": $.cookie('userId'),
+          "items": JSON.stringify($scope.list)
+        },
+        "method":"POST",
+        "url": "/AjaxPostList"
+      },function(data){
+        console.log(data);
+      },function(){
+        
+      });
 
 		console.log($scope.allLists);
 		$scope.list = [];

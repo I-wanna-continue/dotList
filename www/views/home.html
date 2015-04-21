@@ -29,18 +29,18 @@
                 </div>
 
                 <div class="slogan"><p>Fill in this form to register!</p></div>
-
-
+                    <p class="error-message">{{ errormsg }}</p>
+                
                 <div class="registerForm2">
 
-                    <input type="text" class="full-form" placeholder="Username">
-                    <input type="text" class="full-form" placeholder="Email">
-                    <input type="password" class="full-form" placeholder="Password">
-                    <input type="password" class="full-form" placeholder="Retype Password">
+                    <input ng-model="regUsername" type="text" class="full-form" placeholder="Username">
+                    <input ng-model="regEmail" type="text" class="full-form" placeholder="Email">
+                    <input ng-model="regPassword" type="password" class="full-form" placeholder="Password">
+                    <input ng-model="regRetype" type="password" class="full-form" placeholder="Retype Password">
 
                 </div>
 
-                <input type="button" id="registerBack" class="login-btn2" value="Register" ng-click="flip()">
+                <input type="button" id="registerBack" class="login-btn2" value="Register" ng-click="regUser()">
 
 
             </div>
