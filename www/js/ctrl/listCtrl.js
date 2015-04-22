@@ -36,7 +36,7 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
 
     $scope.init = function(){
         $scope.db.info().then(function (info) {
-          //console.log(info);
+          console.log(info);
           if(info["doc_count"] == 0) {
               $scope.db.put({
                   _id: 'lists',
@@ -100,7 +100,7 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
 		$scope.allLists.push({
 			title: $scope.listTitle,
 			items: $scope.list,
-      id: $scope.allLists.length+1
+            id: $scope.allLists.length+1
 		});
 
     ajaxFactory.ajax({
@@ -116,8 +116,7 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
       },function(){
         
       });
-
-		console.log($scope.allLists);
+        
 		$scope.list = [];
 		$scope.listTitle = "";
 		$("#overlay").hide();
@@ -159,7 +158,6 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
 
     $scope.getLists = function(){
         $scope.db.get('lists').then(function (doc) {
-            console.log(doc["lists"]);
             $scope.$apply(function(){
                 $scope.allLists = doc["lists"];
             });

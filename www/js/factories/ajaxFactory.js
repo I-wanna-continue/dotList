@@ -38,11 +38,11 @@ app.factory('ajaxFactory', function($http) {
                 url: baseurl + data["url"],
                 dataType: "json",
                 data: data["data"],
-                success: function (msg) {
-                    console.log("Succsess!");
+                success: function (data) {
+                    //console.log("Succsess!");
                     //var json  = JSON.parse(msg);
                     
-                      succsescb(msg);
+                      succsescb(data);
                       
 
                     //console.log(msg[0]["id"]);

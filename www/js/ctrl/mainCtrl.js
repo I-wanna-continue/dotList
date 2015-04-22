@@ -1,5 +1,5 @@
 app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope, ajaxFactory, $state) {
-    
+    $scope.db = new PouchDB('dotlist');
     $scope.login = function(){
       //console.log($scope.username, $scope.password);
       ajaxFactory.ajax(
@@ -15,8 +15,28 @@ app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope,
               //console.log($.cookie('userId'));
              // $.removeCookie('userId');
              // console.log($.cookie('userId'));
-             console.log(data);
-               $state.transitionTo("lists");
+             // console.log(data[4]["lists"]);
+             var lists = data[4]["lists"][0];
+             var allists = [];
+             console.log(lists.length);
+             for(var i = 0; i < lists.length; i++){
+                 console.log(i);
+                 allists.push({
+                     title: lists[i]["list_title"],
+                     items: lists[i]["list_items"]["items"],
+                     id: lists[i]["list_id"]
+                 });
+             }
+             console.log(allists); 
+             $scope.db.get('lists').then(function(doc) {
+                  return $scope.db.put({
+                    _id: doc["_id"],
+                    _rev: doc["_rev"],
+                    lists: allists
+                  });
+              });
+                
+              $state.transitionTo("lists");
             }
 
         },function(){
@@ -52,7 +72,19 @@ app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope,
         $scope.errormsg = "Your password doesnt match";
       }
     }
-
+    
+    $scope.init = function(){
+        $scope.db.info().then(function (info) {
+          //console.log(info);
+          if(info["doc_count"] == 0) {
+              $scope.db.put({
+                  _id: 'lists',
+                  lists: []
+              });
+          }
+        });
+    }
+    
     $scope.flipped = false;
 
     $scope.flip = function (){
