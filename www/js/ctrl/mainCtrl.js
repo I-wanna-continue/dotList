@@ -1,7 +1,7 @@
 app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope, ajaxFactory, $state) {
     $scope.db = new PouchDB('dotlist');
     $scope.login = function(){
-      console.log("ups!");
+      $state.transitionTo("lists");
       //FIX THIS;
       /*ajaxFactory.ajax({
           "data":{"email":$scope.username,"password":$scope.password},
@@ -90,7 +90,6 @@ app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope,
                   _id: 'lists',
                   lists: []
               });
-              $state.transitionTo("lists");
           }
         });
     }
