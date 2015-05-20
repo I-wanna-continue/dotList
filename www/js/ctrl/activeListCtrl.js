@@ -1,4 +1,4 @@
-app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
+app.controller('activeListCtrl', function ($scope, $state, $stateParams, ajaxFactory) {
 
     $scope.db = new PouchDB('dotlist');
     $scope.title = "";
@@ -7,6 +7,9 @@ app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
     $scope.menuHandler = "menu-bar";
     $scope.hamburgerHandler = "hamburger";
     $scope.currentTask = 0;
+
+    $scope.loading = false;
+
     $scope.selectedList = [];
 
     $scope.init = function(){
@@ -20,6 +23,45 @@ app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
        	$scope.saveItems();
     }
 
+    $scope.refresh = function(){
+      console.log("refresh!");
+    }
+
+  $scope.deletelist = function(){
+    if(confirm("Are you sure you want to delete " + $scope.title + "?")){
+          loading = true;
+          /*ajaxFactory.ajax({
+              "data":{
+                "list_id": $stateParams.id,
+                "user_id": $.cookie('userId')
+              },
+              "method":"POST",
+              "url": "/AjaxRemoveList"
+            }).done(function(data){
+              console.log(data);
+              loading = false;
+            });*/
+
+            $scope.db.get('lists').then(function(doc) {
+              var lists = [];
+              for(var i = 0; i < doc["lists"].length; i++){
+                  console.log(doc["lists"]);
+                  if(doc["lists"][i]["id"] === $stateParams.id){
+                    //lists = doc["lists"].splice(i, 1);
+                    console.log(doc["lists"].splice(i-1, 1));
+
+                  }
+              }
+              /*
+              return $scope.db.put({
+                _id: doc["_id"],
+                _rev: doc["_rev"],
+                lists: lists
+              });*/
+            });
+            //$state.transitionTo("lists");
+        }
+  }
     	//Delete items in a List
 	$scope.deleteItem = function($index){
 
@@ -36,12 +78,24 @@ app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
 			id: $scope.selectedList.length +1,
 			title: $scope.itemTitle,
 			complete: false
-
 		});
+
+    $scope.loading = true;
+    /*ajaxFactory.ajax({
+        "data":{
+          "list_id": $stateParams.id,
+          "content": $scope.itemTitle
+        },
+        "method":"POST",
+        "url": "/AjaxPostItem"
+      }).done(function(data){
+        console.log(data);
+        $scope.loading = false;
+      });*/
 
 		$scope.itemTitle = "";
 		$scope.currentTask++
-        $scope.saveItems();
+    $scope.saveItems();
 	}
 
     $scope.menuAction = function(){
@@ -76,11 +130,12 @@ app.controller('activeListCtrl', function ($scope, $stateParams, ajaxFactory) {
 
     $scope.getItems = function(){
         $scope.db.get('lists').then(function (doc) {
-            console.log(doc["lists"]);
+            //console.log(doc["lists"]);
             for(var i = 0; i < doc["lists"].length; i++){
                 if(doc["lists"][i]["id"] == $stateParams.id){
                     $scope.$apply(function(){
                         $scope.title = doc["lists"][i]["title"];
+                        console.log(doc["lists"][i]["items"]);
                         $scope.selectedList = doc["lists"][i]["items"];
                     });
                 }

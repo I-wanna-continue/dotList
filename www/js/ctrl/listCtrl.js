@@ -1,10 +1,9 @@
-app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFactory) {
-
+app.controller('listCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope, ajaxFactory, $state) {
   $scope.db = new PouchDB('dotlist');
 
 	$scope.allLists = [];
 	$scope.list = [];
-  $scope.loading = false;
+  $scope.loading = true;
 	$scope.listTitle = "";
 
 
@@ -28,6 +27,19 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
   $scope.deleteList = function($index){
 
     if(confirm("Are you sure you want to delete " + $scope.allLists[$index]["title"] + "?")){
+          loading = true;
+          /*ajaxFactory.ajax({
+              "data":{
+                "list_id": $scope.allLists[$index]["id"],
+                "user_id": $.cookie('userId')
+              },
+              "method":"POST",
+              "url": "/AjaxRemoveList"
+            }).done(function(data){
+              console.log(data);
+              loading = false;
+            });*/
+
             $scope.allLists.splice($index, 1);
             $scope.saveLists();
         }
@@ -35,6 +47,7 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
   }
 
     $scope.init = function(){
+        console.log("init");
         $scope.db.info().then(function (info) {
           console.log(info);
           if(info["doc_count"] == 0) {
@@ -80,18 +93,16 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
   $scope.refresh = function(){
     var loading = $scope.loading;
     loading = true;
-      ajaxFactory.ajax({
+     /* ajaxFactory.ajax({
           "data":{
             "user_id": $.cookie('userId')
           },
           "method":"POST",
           "url": "/AjaxGetLists"
-        },function(data){
+        }).done(function(data){
           console.log(JSON.parse(data));
           loading = false;
-        },function(){
-          
-      });
+        });*/
 
   }
 
@@ -103,7 +114,7 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
             id: $scope.allLists.length+1
 		});
 
-    ajaxFactory.ajax({
+    /*ajaxFactory.ajax({
         "data":{
           "listname": $scope.listTitle,
           "owner": $.cookie('userId'),
@@ -114,9 +125,9 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
       },function(data){
         console.log(data);
       },function(){
-        
-      });
-        
+
+      });*/
+
 		$scope.list = [];
 		$scope.listTitle = "";
 		$("#overlay").hide();
@@ -158,8 +169,14 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
 
     $scope.getLists = function(){
         $scope.db.get('lists').then(function (doc) {
+            console.log(doc["lists"]);
+            if(doc["lists"].length === 0){
+              $scope.getLists();
+              return;
+            }
             $scope.$apply(function(){
                 $scope.allLists = doc["lists"];
+                $scope.loading = false;
             });
             //$scope.allLists = doc["lists"];
         });
@@ -173,6 +190,11 @@ app.controller('listCtrl', ['$scope', 'ajaxFactory', function ($scope, ajaxFacto
             lists: $scope.allLists
           });
         });
+    }
+
+    $scope.logout = function(){
+      $.removeCookie('userId');
+      $state.transitionTo("index");
     }
 
     $scope.flipped = false;

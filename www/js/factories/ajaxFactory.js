@@ -8,7 +8,7 @@ app.factory('ajaxFactory', function($http) {
     };
 
     return {
-        ajax: function(data,succsescb,errorcb) {
+        ajax: function(data) {
 
           var baseurl = "http://innk94-001-site1.smarterasp.net/Service1.asmx";
 
@@ -33,25 +33,11 @@ app.factory('ajaxFactory', function($http) {
                 "password": "Test123123",
             };
 
-            $.ajax({
+          return $.ajax({
                 type: data["method"],
                 url: baseurl + data["url"],
                 dataType: "json",
-                data: data["data"],
-                success: function (data) {
-                    //console.log("Succsess!");
-                    //var json  = JSON.parse(msg);
-                    
-                      succsescb(data);
-                      
-
-                    //console.log(msg[0]["id"]);
-                },
-                error: function (err) {
-                    console.log("Fail!");
-                    console.log(err);
-                    //console.log(err.responseText);
-                }
+                data: data["data"]
             });
 
 

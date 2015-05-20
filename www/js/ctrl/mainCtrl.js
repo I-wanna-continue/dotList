@@ -1,51 +1,60 @@
 app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope, ajaxFactory, $state) {
     $scope.db = new PouchDB('dotlist');
     $scope.login = function(){
-      //console.log($scope.username, $scope.password);
-      ajaxFactory.ajax(
-        {
+      console.log("ups!");
+      //FIX THIS;
+      /*ajaxFactory.ajax({
           "data":{"email":$scope.username,"password":$scope.password},
           "method":"POST",
           "url": "/AjaxLogin"
-        },function(data){
-          if(data === ""){$scope.errormsg = "Wrong email or password! try again";}
-            else{
-              var data = JSON.parse(data);
-              $.cookie('userId', data[0]["id"]);
-              //console.log($.cookie('userId'));
-             // $.removeCookie('userId');
-             // console.log($.cookie('userId'));
-             // console.log(data[4]["lists"]);
+        }).done(function(data){
+          if(data.length === 0){
+            $scope.$apply(function () {
+              $scope.error = "Wrong email or password! try again";
+            });
+          }else{
+             var data = JSON.parse(data);
+             console.log(data);
+             $.cookie('userId', data[0]["id"]);
+
              var lists = data[4]["lists"][0];
              var allists = [];
-             console.log(lists.length);
              for(var i = 0; i < lists.length; i++){
-                 console.log(i);
                  allists.push({
                      title: lists[i]["list_title"],
                      items: lists[i]["list_items"]["items"],
                      id: lists[i]["list_id"]
                  });
              }
-             console.log(allists); 
+
+             $scope.db.info().then(function (info) {
+               console.log(info);
+               if(info["doc_count"] == 0) {
+                   $scope.db.put({
+                       _id: 'lists',
+                       lists: []
+                   });
+               }
+             });
+
              $scope.db.get('lists').then(function(doc) {
                   return $scope.db.put({
                     _id: doc["_id"],
                     _rev: doc["_rev"],
                     lists: allists
                   });
-              });
-                
-              $state.transitionTo("lists");
-            }
+             });
 
-        },function(){
-          
-        });
-
+             $state.transitionTo("lists");
+          }
+        });*/
+    
     }
 
     $scope.regUser = function(){
+      console.log("uops not working!");
+      //FIX THIS!
+      /*
       if($scope.regPassword === $scope.regRetype){
           ajaxFactory.ajax(
           {
@@ -66,13 +75,13 @@ app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope,
             //   }
 
           },function(){
-            
+
           });
       }else{
         $scope.errormsg = "Your password doesnt match";
-      }
+      }*/
     }
-    
+
     $scope.init = function(){
         $scope.db.info().then(function (info) {
           //console.log(info);
@@ -81,10 +90,11 @@ app.controller('mainCtrl', ['$scope', 'ajaxFactory', '$state', function ($scope,
                   _id: 'lists',
                   lists: []
               });
+              $state.transitionTo("lists");
           }
         });
     }
-    
+
     $scope.flipped = false;
 
     $scope.flip = function (){

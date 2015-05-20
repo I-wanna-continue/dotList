@@ -7,7 +7,7 @@
     <span><i class="fa fa-pencil fa-2x"></i></span>
 </div>
 <div class="content-block">
-            
+
     <div class="headline-">
         <span class="itemCount">{{allLists.length}}</span>
         <h3>Your lists</h3>
@@ -23,18 +23,18 @@
                 <div class="forward-icon"><a href="#/activelist/{{ list.id }}">
                         <span><i class="fa fa-chevron-right fa-2x"></i></span></a>
                 </div>
-               
+
             </div>
 
             <!-- Fixa så att bara admin av listan ser options -->
-            
+
              <div class="list-options">
                 <div class="flip-container">
                     <span class="flipped" style="display: none;">0</span>
                     <div class="first-side">
                         <div class="front-side">
                             <span><i class="fa fa-pencil fa-2x"></i></span>
-                            <span ng-click="flip($event)"><i class="fa fa-user-plus fa-2x"></i></span> 
+                            <span ng-click="flip($event)"><i class="fa fa-user-plus fa-2x"></i></span>
                             <span ng-click="deleteList($index)"><i class="fa fa-trash-o fa-2x"></i></span>
                         </div>
                         <div class="back-side facet">
@@ -45,11 +45,11 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
-   
+
 </div>
 
 
@@ -64,7 +64,7 @@
                 <div class="addList">
                     <input ng-model="itemTitle" type="text" class="add-list-title" placeholder="Task..."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Task...'" /><span ng-click="addItem()"><i class="fa fa-plus fa-2x"></i></span>
                 </div>
-                
+
                 <div class="item-wrap">
                     <div class="item" ng-repeat="item in list">
                         <p>{{item.title | limitTo: 20}}{{item.title.length>20 ?"...": ""}}</p>
@@ -76,15 +76,15 @@
                 <span class="add-list" ng-click="createList()"><i class="fa fa-check fa-2x"></i></span>
             </div>
             </div>
-            
+
         </div>
-        
-     
+
+
 
         <div class="search-bar">
-            <input type="text" class="search-input-header" placeholder="search...">    
+            <input type="text" class="search-input-header" placeholder="search...">
         </div>
-        
+
         <div class="hide-on-keyboard-open">
             <div class="ham-menu" ng-click="menuAction()">
                 <div ng-class="hamburgerHandler">
@@ -99,7 +99,7 @@
                         <i class="fa fa-search fa-2x"></i>
                     </span>
                 </div>
-               
+
                 <div class="block home"><a ng-href="#/lists">
                     <span class="three">
                         <i class="fa fa-home fa-2x "></i>
@@ -110,15 +110,15 @@
                         <i class="fa fa-cog fa-2x"></i>
                     </span></a>
                 </div>
-                <div class="block "><a  ng-href="#/">
-                    <span class="five">
+                <div class="block ">
+                    <span class="five" ng-click="logout()">
                         <i class="fa fa-power-off fa-2x"></i>
-                    </span></a>
+                    </span>
                 </div>
 
 
             </div>
         </div>
-    
+
 <div ng-init="init()"></div>
 </ion-view>
